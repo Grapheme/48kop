@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'kiddy_kitty';
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-bold-webfont.eot');
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-bold-webfont.woff') format('woff'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-bold-webfont.ttf') format('truetype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-bold-webfont.svg#kiddy_kittybold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kiddy_kitty';
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-medium-webfont.eot');
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-medium-webfont.woff') format('woff'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-medium-webfont.ttf') format('truetype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-medium-webfont.svg#kiddy_kittymedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kiddy_kitty';
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-webfont.eot');
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-webfont.woff') format('woff'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-webfont.ttf') format('truetype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-webfont.svg#kiddy_kittyregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?18228898');
+  src: url('../fonts/fontello.eot?18228898#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?18228898') format('woff'),
+       url('../fonts/fontello.ttf?18228898') format('truetype'),
+       url('../fonts/fontello.svg?18228898#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: "fontello";
+}
+ 
+.icon-down-open:before { content: '\e800'; } /* '' */
+.icon-vk:before { content: '\e801'; } /* '' */
+.icon-down-dir:before { content: '\e802'; } /* '' */
+.icon-up-dir:before { content: '\e803'; } /* '' */
+.icon-fb:before { content: '\e804'; } /* '' */
+.icon-odnokl:before { content: '\e805'; } /* '' */
+.icon-cancel:before { content: '\e806'; } /* '' */

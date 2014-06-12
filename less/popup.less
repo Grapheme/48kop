@@ -1,0 +1,191 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: #126db6;
+	background: rgba(18,109,182, .8);
+	z-index: 2;
+}
+
+.popup {
+	position: absolute;
+	top: 184rem / @htmlFontSize;
+	left: 50%;
+	background: #fff;
+
+	border-radius: 12rem / @htmlFontSize;
+
+	h3 {
+		margin: 0;			
+		padding: 3.8rem 0 0;
+		color: #0d81c4;
+		text-align: center;
+		font-size: 40em / @htmlFontSize;
+	}
+
+	.popup-desc {
+		color: #666;
+		font-size: 18em / @htmlFontSize;
+		text-align: center;
+	}
+}
+
+.feedback {
+	top: 5%;
+	width: 744rem / @htmlFontSize;
+	height: 553rem / @htmlFontSize;
+	margin: 0 0 0 -744rem / @htmlFontSize / 2;
+
+	h3 {	
+		padding: 1.8rem 0 0;
+	}
+}
+
+.auth {
+	width: 603rem / @htmlFontSize;
+	height: 363rem / @htmlFontSize;
+	margin: 0 0 0 -603rem / @htmlFontSize / 2;
+}
+
+.auth-ul {
+	.list-unstyled;
+	margin: 1.5rem 0 0;
+	text-align: center;
+
+	.auth-li {
+		display: inline-block;	
+
+		.odnokl {
+			background: #ff9900;
+
+			&:hover {
+				background: lighten(#ff9900, 10%)
+			}
+		}
+
+		.vk {
+			background: #0f63a5;
+
+			&:hover {
+				background: lighten(#0f63a5, 10%)
+			}
+		}
+
+		.fb {
+			background: #38519f;
+
+			&:hover {
+				background: lighten(#38519f, 10%)
+			}
+		}
+
+		a {
+			.transition;
+			display: inline-block;
+			width: 5.5rem;
+			height: 5.6rem;
+			margin: 0 0.9rem 0 0;
+			border-radius: 50%;
+
+			font-size: 3.2rem;
+			line-height: 5.6rem;
+			text-decoration: inherit;
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+}
+
+.feedback-form {
+	margin: 2.8rem 0 0 0;
+	padding: 0 3.825rem 4.125rem;
+
+	section {
+		margin: 0 0 23rem / @htmlFontSize;
+
+		&.with-textarea {
+			margin: 1.8rem 0 0;
+
+			label {
+				margin: .5rem 0 0;
+			}
+		}
+	}
+
+	label {
+		.box-sizing;
+		display: inline-block;
+		width: 12rem;
+
+		color: #333;
+	}
+
+	input {
+		.box-sizing;
+		display: inline-block;
+		width: 26.55rem;
+		height: 38rem / @htmlFontSize;
+		padding: 0 .8rem;
+		border: 1px solid #ccc;
+		box-shadow: none;
+		border-radius: 2rem / @htmlFontSize;
+		outline: none;
+
+		font-family: 'Helvetica', sans-serif;
+	}
+
+	textarea {
+		.box-sizing;
+		display: inline-block;
+		width: 26.55rem;
+		height: 150rem / @htmlFontSize;
+		padding: 0 .8rem;
+		border: 1px solid #ccc;
+		box-shadow: none;
+		border-radius: 2rem / @htmlFontSize;
+		outline: none;
+		resize: none;
+
+		font-family: 'Helvetica', sans-serif;
+	}
+
+	button {
+		.transition;
+		.box-sizing;
+		display: block;
+		width: 12.6rem;
+		height: 2.8rem;
+		margin: 2.2rem auto 0;
+
+		background: #0d81c4;
+		border: none;
+		outline: none;
+		color: #fff;
+		font-family: 'kiddy_kitty';
+		
+		font-size: 18em / @htmlFontSize;
+		padding: 1rem / @htmlFontSize 0 0;
+		border-radius: 23rem / @htmlFontSize;
+
+		&:hover {
+			background: lighten(#0d81c4, 10%)
+		}
+	}
+}
+
+.popup-close {
+	.transition;
+	position: absolute;
+	right: 25rem / @htmlFontSize;
+	top: 6rem / @htmlFontSize;
+	font-size: 43em / @htmlFontSize;
+	color: #f1f1f1;
+	cursor: pointer;
+
+	&:hover {
+		color: #aaa;
+	}
+}

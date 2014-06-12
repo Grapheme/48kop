@@ -1,0 +1,92 @@
+.footer {
+	.box-sizing;
+	width: 100%;
+	max-width: 1139rem / @htmlFontSize;
+	height: 386rem / @htmlFontSize;
+	margin: 0 auto;
+	padding: 11.5rem 0 0;
+
+	text-align: center;
+	background: url(../img/bot-bg.png) no-repeat;
+
+	.tel {
+		position: relative;
+		z-index: 1;
+		font-size: 36em / @htmlFontSize;
+		font-weight: 700;
+		margin: 1.5rem 0 1rem;
+		line-height: .75;
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+		text-shadow: 2px 2px #0d4c7f;
+	}
+
+	.politics {
+		.transition;
+		display: inline-block;
+		margin: 0 0 .9rem;
+		border-bottom: 1px solid;
+		font-size: 14.5em / @htmlFontSize;
+		color: inherit;
+		line-height: 1;
+		text-decoration: none;
+
+		&:hover {
+			border-color: transparent;
+		}
+	}
+
+	.social {
+		.list-unstyled;
+		margin: 0 0 1.4rem;
+
+		.social-li {
+			display: inline-block;
+
+			a {
+				.transition;
+				display: inline-block;
+				width: 1.9rem;
+				height: 1.75rem;
+				margin: 0 0.3rem;
+				border: 2px solid #fff;
+				border-radius: 50%;
+
+				text-decoration: none;
+				outline: none;
+				line-height: 1.9rem;
+				font-size: 1.0625em;
+				color: #fff;
+
+				&:hover {
+					opacity: .75;
+				}
+			}
+		}
+	}
+
+	.copy {
+		font-size: 12em / @htmlFontSize;
+		letter-spacing: 0.6rem / @htmlFontSize;
+
+		.copy-text {
+			opacity: .5;
+		}
+
+		a {
+			.transition;
+			display: inline-block;
+			margin: 0 0 0 1rem;
+			color: #fff;
+			opacity: .5;
+			text-decoration: none;
+			border-bottom: 1px solid;
+			line-height: 1;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
+}

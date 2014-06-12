@@ -1,0 +1,122 @@
+html {
+	font-family: 'kiddy_kitty', sans-serif;
+	color: #fff;
+}
+
+.top {
+	.box-sizing;
+	width: 100%;
+	max-width: 1139rem / @htmlFontSize;
+	height: 700rem / @htmlFontSize;
+	margin: -94rem / @htmlFontSize auto 0;
+	padding: 94rem / @htmlFontSize 0 0;
+
+	background: url(../img/top-bg.png);
+
+	.family-form {
+		.box-sizing;
+		width: 980rem / @htmlFontSize;
+		height: 25rem;
+		margin: 0 auto;
+		border: 2px solid #fff;
+		border-radius: 16px;
+		box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4) inset, 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+
+		.form-head {
+			text-align: center;
+
+			h2 {
+				margin-bottom: 1.1rem;
+				font-size: 30em / @htmlFontSize;
+				line-height: 32em / @htmlFontSize;
+
+				text-shadow: 2px 2px #0d4c7f;
+			}
+		}
+
+		.form-desc {
+			font-size: 18rem / @htmlFontSize;
+			line-height: 26rem / @htmlFontSize;
+		}
+	}
+
+	.to-bot {
+		margin: 2.2rem 0 0 0;
+		font-size: 14em / @htmlFontSize;
+		text-align: center;
+
+		button {
+			width: 2.6rem;
+			height: 2.55rem;			
+			border: 2px solid #fff;
+			border-radius: 50%;
+			background: none;
+			outline: none;
+
+			font-size: 17em / @htmlFontSize;
+			color: #fff;
+		}
+	}
+}
+
+.mid {
+	.box-sizing;
+	position: relative;
+	width: 100%;
+	max-width: 1139rem / @htmlFontSize;
+	height: 12rem;
+	margin: 0 auto;
+	padding: 1rem 0 0 5.1rem;
+	background: #FFB35F;
+
+	.mid-cont {
+		margin: -2rem 0 0;
+
+		.show-all-tastes {
+			.transition;
+			display: inline-block;
+			font-size: 25.5rem / @htmlFontSize;
+			color: inherit;
+			line-height: .75;
+			border-bottom: 1px solid;
+			text-decoration: none;
+			outline: none;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+
+		p {
+			margin: 0.6em 0 0.7em;
+			font-size: 18em / @htmlFontSize;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 6.4rem;
+		left: 4rem;
+
+		width: 460rem / @htmlFontSize;
+		height: 365rem / @htmlFontSize;
+		background: url(../img/icecream.png) no-repeat;
+	}
+	&:after {
+		content: '';
+		
+		content: '';
+		position: absolute;
+		top: -6.5rem;
+		right: 3.8rem;
+
+		width: 400rem / @htmlFontSize;
+		height: 454rem / @htmlFontSize;
+		background: url(../img/snowman.png) no-repeat;
+	}
+}

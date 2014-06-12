@@ -1,0 +1,54 @@
+.header {
+	position: relative;
+	z-index: 1;
+	height: 144rem / @htmlFontSize;
+	background: url(../img/header-bg.png) repeat-x;
+}
+
+.logo {
+	position: absolute;
+	top: 9rem / @htmlFontSize;
+	left: 79rem / @htmlFontSize;
+	width: 456rem / @htmlFontSize;
+	height: 124rem / @htmlFontSize;	
+	margin: 0;
+	background: url(../img/logo.png) no-repeat 0 0 e('/') 100% 100%;
+
+
+	text-indent: -9999px;
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.nav-ul {
+	.list-unstyled;
+	float: right;
+	margin: 1.9rem 4.1rem 0 0;
+
+	.nav-li {
+		display: inline-block;
+		font-size: 14rem / @htmlFontSize;
+		margin: 0 7rem / @htmlFontSize 0 0;
+
+		a {
+			.transition;
+			display: block;
+			padding: 5rem / @htmlFontSize 9rem / @htmlFontSize;
+			border-radius: 16rem / @htmlFontSize;
+
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				background: #fff;
+				color: #2056a0;
+			}
+		}
+	}
+}

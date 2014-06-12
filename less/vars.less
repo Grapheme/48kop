@@ -1,0 +1,22 @@
+@htmlFontSize: 16;
+
+.transition(@elem: all, @duration: .5s, @effect: ease) {
+	-webkit-transition: @elem @duration @effect;
+	transition: @elem @duration @effect;
+}
+
+.box-sizing(@val: border-box) {
+	-webkit-box-sizing: @val;
+	-moz-box-sizing: @val;
+	box-sizing: @val;
+}
+
+.list-unstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
