@@ -1,0 +1,109 @@
+.recomendations {
+	.box-sizing;
+	width: 100%;
+	margin: -94rem / @htmlFontSize auto 0;
+	padding: 94rem / @htmlFontSize 0 0;
+	background: url(../img/ellipse.png) no-repeat center 0 #126eb7;
+
+	h2 {
+		line-height: 48em / 40;
+		font-size: 40em / @htmlFontSize;
+		text-align: center;
+		text-shadow: 2px 2px #0d4c7f;
+	}
+
+	h3 {
+		display: inline-block;
+		font-size: 24em / @htmlFontSize;
+		margin: 38rem / @htmlFontSize 0 29rem / @htmlFontSize;
+		padding: 14rem / @htmlFontSize 23rem / @htmlFontSize 10rem / @htmlFontSize;
+		line-height: 1;
+		text-transform: uppercase;
+		font-weight: 400;
+
+		letter-spacing: 3rem / @htmlFontSize;
+		background: #049dc4;
+		border-radius: 32rem / @htmlFontSize;
+	}
+
+	.places {
+		text-align: center;
+
+		.places-ul {
+			.list-unstyled;
+
+			.places-li {
+				display: inline-block;
+				width: 306rem / @htmlFontSize;
+				height: 344rem / @htmlFontSize;
+				margin: 0 31rem / @htmlFontSize 28rem / @htmlFontSize 0;
+				text-align: left;
+
+				background: #fff;
+				box-shadow: 3px 3px 0 0 rgba(0, 0, 0, .2);
+
+				&:nth-child(3n) {
+					margin: 0;
+				}
+
+				.places-body {
+					.places-link {
+						.transition;
+						display: inline-block;
+						margin: 24rem / @htmlFontSize 0 17rem / @htmlFontSize 18rem / @htmlFontSize;
+						font-size: 20em / @htmlFontSize;
+						line-height: .95;
+						border-bottom: 1px solid;
+
+						color: #1186c9;
+						text-decoration: none;
+
+						&:hover {
+							border-color: transparent;
+						}
+					}
+					.places-name {
+						margin: 0 0 14rem / @htmlFontSize 18rem / @htmlFontSize;
+						color: #333;
+						font: .875em sans-serif;
+					}
+					.places-street {
+						margin: 0 0 0 18em / @htmlFontSize;
+						color: #333;
+						font: .875em sans-serif;
+
+						.icon {
+							margin: 0 9rem / @htmlFontSize 0 0;
+							color: #1186c9;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	.rec-filter {
+		.list-unstyled;
+		text-align: center;
+
+		.rec-filter-li {
+			display: inline-block;
+			margin: 0 29rem / @htmlFontSize 0 0;
+
+			a {
+				.transition;
+				display: inline-block;
+				border-bottom: 1px dotted;
+
+				line-height: 1;
+				color: inherit;
+				text-decoration: none;
+
+				&:hover {
+					border-color: transparent;
+				}
+			}
+		}
+	}
+}
