@@ -33,11 +33,11 @@
 
 @font-face {
   font-family: 'fontello';
-  src: url('../fonts/fontello.eot?62909843');
-  src: url('../fonts/fontello.eot?62909843#iefix') format('embedded-opentype'),
-       url('../fonts/fontello.woff?62909843') format('woff'),
-       url('../fonts/fontello.ttf?62909843') format('truetype'),
-       url('../fonts/fontello.svg?62909843#fontello') format('svg');
+  src: url('../fonts/fontello.eot?88361212');
+  src: url('../fonts/fontello.eot?88361212#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff?88361212') format('woff'),
+       url('../fonts/fontello.ttf?88361212') format('truetype'),
+       url('../fonts/fontello.svg?88361212#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -54,3 +54,5 @@
 .icon-odnokl:before { content: '\e805'; } /* '' */
 .icon-cancel:before { content: '\e806'; } /* '' */
 .icon-calendar:before { content: '\e807'; } /* '' */
+.icon-location:before { content: '\e808'; } /* '' */
+.icon-calendar-1:before { content: '\e809'; } /* '' */
