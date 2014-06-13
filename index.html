@@ -28,7 +28,7 @@
             </h1>
             <nav>
                 <ul class="nav-ul">
-                    <li class="nav-li">
+                    <li class="nav-li active">
                         <a href="">О проекте</a>
                     <li class="nav-li">
                         <a href="">Продукция</a>
@@ -41,59 +41,90 @@
         </header>
         <main>
             <section class="top">
-                <form class="family-form">
-                    <div class="form-head">
-                        <h2>Спланируйте семейные выходные!</h2>
-                        <div class="form-desc">
-                            Проведите выходные в компании близких. Спланируйте прекрасные 48 часов прямо сейчас!<br>
-                            Заполни анкету и получи рекомендации на выходные!
+                <div class="section-cont">
+                    <form class="family-form">
+                        <div class="form-head">
+                            <h2>Спланируйте семейные выходные!</h2>
+                            <div class="form-desc">
+                                Проведите выходные в компании близких. Спланируйте прекрасные 48 часов прямо сейчас!<br>
+                                Заполни анкету и получи рекомендации на выходные!
+                            </div>
                         </div>
+                        <fieldset>
+                            <section class="family-form-part">
+                                <div class="date-part">
+                                    <label>
+                                        Дата:
+                                        <input type="text">
+                                        <span class="cal-icon icon icon-calendar"></span>
+                                    </label>
+                                </div>                                
+                                <div class="city-part">
+                                    <label>Ваш город:</label>
+                                    <select>
+                                        <option selected>Ростов-на-Дону</option>
+                                        <option>Азов</option>
+                                    </select>
+                                </div>
+                            </section><!--
+                         --><section class="family-form-part">
+                                <label>Укажите состав семьи:</label>
+                            </section><!--
+                         --><section class="family-form-part">
+                                <label>Укажите ваши интересны:</label>
+                                <select>
+                                    <option selected>Прогулки с семьей</option>
+                                    <option>Drugs</option>
+                                    <option>Sex</option>
+                                    <option>Rock'n'Roll</option>
+                                </select>
+                            </section>
+                        </fieldset>
+                    </form>
+                    <div class="to-bot">
+                        <div>Выбери свои 48 копеек на выходные!</div>
+                        <div class="button"><span class="icon icon-down-open"></span></div>
                     </div>
-                    <fieldset>
-                        <section></section>
-                        <section></section>
-                        <section></section>
-                    </fieldset>
-                </form>
-                <div class="to-bot">
-                    <div>Выбери свои 48 копеек на выходные!</div>
-                    <button><span class="icon icon-down-open"></span></button>
                 </div>
             </section>
             <section class="mid">
-                <div class="mid-cont">
-                    <a class="show-all-tastes" href="#">Посмотреть все вкусы</a>
-                    <p>
-                        Мороженое 48 копеек. Вкусы для всех<br>
-                        в лучших семейных традициях.
-                    </p>
-                    <p>
-                        Выберите свой!
-                    </p>
+                <div class="section-cont">
+                    <div class="mid-cont">
+                        <a class="show-all-tastes" href="#">Посмотреть все вкусы</a>
+                        <p>
+                            Мороженое 48 копеек. Вкусы для всех<br>
+                            в лучших семейных традициях.
+                        </p>
+                        <p>
+                            Выберите свой!
+                        </p>
+                    </div>
                 </div>
             </section>
         </main>
         <footer class="footer">
-            <div>Телефон горячей линии:</div>
-            <div>
-                <a class="tel" href="tel:+78002007200">8 800 200 72 00</a>
-            </div>
-            <div>
-                <a class="politics" href="#">Политика конфиденциальости</a>
-            </div>
-            <ul class="social">
-                <li class="social-li">
-                    <a href="#"><span class="icon icon-odnokl"></span></a>
-                <li class="social-li">
-                    <a href="#"><span class="icon icon-vk"></span></a>
-                <li class="social-li">
-                    <a href="#"><span class="icon icon-fb"></span></a>
-            </ul>
-            <div class="copy">
-                <span class="copy-text">© 2014. Проект «48 часов вместе»</span> <a href="http://48kopeek.ru">48kopeek.ru</a>
+            <div class="section-cont">
+                <div>Телефон горячей линии:</div>
+                <div>
+                    <a class="tel" href="tel:+78002007200">8 800 200 72 00</a>
+                </div>
+                <div>
+                    <a class="politics" href="#">Политика конфиденциальости</a>
+                </div>
+                <ul class="social">
+                    <li class="social-li">
+                        <a href="#"><span class="icon icon-odnokl"></span></a>
+                    <li class="social-li">
+                        <a href="#"><span class="icon icon-vk"></span></a>
+                    <li class="social-li">
+                        <a href="#"><span class="icon icon-fb"></span></a>
+                </ul>
+                <div class="copy">
+                    <span class="copy-text">© 2014. Проект «48 часов вместе»</span> <a href="http://48kopeek.ru">48kopeek.ru</a>
+                </div>
             </div>
         </footer>
-        <div class="overlay">
+        <div class="overlay hidden">
             <section class="popup auth hidden" data-item="auth">
                 <header>
                     <div class="popup-close icon icon-cancel"></div>
@@ -112,7 +143,7 @@
                         <a class="fb" href="#"><span class="icon icon-fb"></span></a>
                 </ul>
             </section>
-            <section class="popup feedback" data-item="feedback">
+            <section class="popup feedback hidden" data-item="feedback">
                 <header>
                     <div class="popup-close icon icon-cancel"></div>
                     <h3>Обратная связь</h3>

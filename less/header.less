@@ -37,6 +37,7 @@
 		margin: 0 7rem / @htmlFontSize 0 0;
 
 		a {
+			position: relative;
 			.transition;
 			display: block;
 			padding: 5rem / @htmlFontSize 9rem / @htmlFontSize;
@@ -45,9 +46,30 @@
 			color: inherit;
 			text-decoration: none;
 
-			&:hover {
+			&:before {
+				.transition;
+				content: "";
+				position: absolute;
+				width: 84%;
+				bottom: 6rem / @htmlFontSize;
+				left: 8%;
+				border-color: transparent;
+			}
+
+			&:hover:before {
+				border-top: 1px solid #fff;
+			}
+		}
+
+		&.active {
+			a {
 				background: #fff;
 				color: #2056a0;
+				cursor: default;
+
+				&:before {
+					content: none;
+				}
 			}
 		}
 	}
