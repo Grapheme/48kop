@@ -6,11 +6,11 @@ $(document).on('focusout', '.age input', function(){
 });
 
 
-$(document).on('mouseover', '.family-item', function(){
-	$(this).find('.person').fadeIn();
+$(document).on('mouseover', '.pers-img', function(){
+	$(this).parent().find('.person').fadeIn(100);
 });
-$(document).on('mouseleave', '.family-item', function(){
-	$(this).find('.person').fadeOut();
+$(document).on('mouseleave', '.pers-img', function(){
+	$(this).parent().find('.person').fadeOut(100);
 });
 
 var Family = (function(){
@@ -20,8 +20,18 @@ var Family = (function(){
 
 	str['father'] = '';
 	str['mother'] = '';
-	str['boy'] = '<span class="age"><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст сына</label></span>';
-	str['gril'] = '<span class="age"><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст дочери</label></span>';
+	str['boy'] = '<span class="age"><span class="pers-img"></span><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст сына</label></span>';
+	str['girl'] = '<span class="age"><span class="pers-img"></span><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст дочери</label></span>';
+
+	var item = {
+		Click: function(that) {
+
+		}
+	};
+
+	$(document).on('click', '.f-step', function(){
+		item.Click($(this));
+	});
 })();
 
 var App = (function(){
@@ -36,5 +46,4 @@ var App = (function(){
 	$(window).resize( function(){
 		alignBg();
 	});
-
 })();
