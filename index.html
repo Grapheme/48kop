@@ -71,24 +71,65 @@
                                 <label>Укажите состав семьи:</label>
                                 <div class="family-cont">
                                     <div class="family">
-                                        <a href="#" class=" family-item father"><span class="person">Папа</span></a>
-                                        <a href="#" class=" family-item mother"><span class="person">Мама</span></a>
-                                        <a href="#" class=" family-item boy"><span class="person">Сын</span></a>
-                                        <a href="#" class=" family-item girl"><span class="person">Дочь</span></a>
+                                        <div class="family-before">
+                                            <a href="#" class="family-item f-step" data-person="father">
+                                                <span class="pers-img"></span>
+                                                <span class="person">Папа</span>
+                                            </a>
+                                            <a href="#" class="family-item f-step" data-person="mother">
+                                                <span class="pers-img"></span>
+                                                <span class="person">Мама</span>
+                                            </a>
+                                            <a href="#" class="family-item f-step" data-person="boy">
+                                                <span class="pers-img"></span>
+                                                <span class="person">Сын</span>
+                                            </a>
+                                            <a href="#" class="family-item f-step" data-person="girl">
+                                                <span class="pers-img"></span>
+                                                <span class="person">Дочь</span>
+                                            </a>
+                                        </div>
                                         <i class="family-arrow"></i>
-                                        <a href="#" class="father active"></a>
-                                        <a href="#" class="mother active"></a>
-                                        <a href="#" class="boy active">
+                                        <div class="family-after">
+                                            <a href="#" class="family-item active" data-person="father">
+                                                <span class="pers-img"></span>
+                                            </a>
+                                            <a href="#" class="family-item active" data-person="mother">
+                                                <span class="pers-img"></span>
+                                            </a>
+                                            <a href="#" class="family-item active" data-person="boy">
+                                                <span class="pers-img"></span>
+                                                <span class="age">
+                                                    <input name="age" maxlength="2" type="text">
+                                                    <label class="fill-age">Укажите возраст сына</label>
+                                                </span>
+                                            </a>
+                                            <a href="#" class="family-item active" data-person="girl">
+                                                <span class="pers-img"></span>
+                                                <span class="age">
+                                                    <input name="age" maxlength="2" type="text">
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <!-- <a href="#" class="family-item father active">
+                                            <span class="pers-img"></span>
+                                        </a>
+                                        <a href="#" class="family-item mother active">
+                                            <span class="pers-img"></span>
+                                        </a>
+                                        <a href="#" class="family-item boy active">
+                                            <span class="pers-img"></span>
                                             <span class="age">
                                                 <input name="age" maxlength="2" type="text">
                                                 <label class="fill-age">Укажите возраст сына</label>
                                             </span>
                                         </a>
-                                        <a href="#" class="girl active">
+                                        <a href="#" class="family-item girl active">
+                                            <span class="pers-img"></span>
                                             <span class="age">
                                                 <input name="age" maxlength="2" type="text">
                                             </span>
-                                        </a>
+                                        </a> -->
                                     </div>
                                 </div>
                             </section><!--
