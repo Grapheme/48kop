@@ -276,11 +276,23 @@ html {
   background: #fff;
   color: #0d4c7f;
 }
-.top .city-select {
-  background: rgba(255, 255, 255, 0.25);
-  border: 0 none;
+.top .city-part {
+  margin-top: 0.9375rem;
+}
+.top .selectBox-dropdown {
   height: 1.875rem;
+  line-height: 1.875rem;
+  border-radius: 0.9375rem;
   font-family: arial, sans-serif;
+  padding-left: 0.3125rem;
+  padding-right: 1.25rem;
+  margin-top: 0.625rem;
+}
+.top .selectBox-label {
+  padding-right: 1.25rem;
+}
+.top .city-select {
+  width: 80%;
 }
 .top .family-item {
   position: relative;
@@ -294,7 +306,7 @@ html {
   opacity: 1;
 }
 .top .family-item:hover {
-  z-index: 3;
+  z-index: 6;
 }
 .top .family-item[data-person=father] {
   position: relative;
@@ -336,7 +348,7 @@ html {
   background: url(../img/girl.png) no-repeat 0 0 / 100% 100%;
 }
 .top .family-item[data-person=girl].active {
-  margin: 0 0.3125rem;
+  margin: 0 0.4375rem !important;
 }
 .top .family-item[data-person=girl].active .age {
   opacity: 1;
@@ -355,7 +367,7 @@ html {
   background: url(../img/boy.png) no-repeat 0 0 / 100% 100%;
 }
 .top .family-item[data-person=boy].active {
-  margin: 0 0.3125rem;
+  margin: 0 0.4375rem !important;
 }
 .top .family-item[data-person=boy].active .age {
   opacity: 1;
@@ -381,6 +393,12 @@ html {
 .top .family .family-before,
 .top .family .family-after {
   display: inline-block;
+}
+.top .family .family-after .family-item {
+  margin: 0 0.15625rem;
+}
+.top .family .family-after .family-item.focused {
+  z-index: 5;
 }
 .top .family .person {
   -webkit-box-sizing: border-box;
@@ -478,7 +496,6 @@ html {
   -webkit-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.5);
-  display: none;
 }
 .top .family .age .fill-age:before {
   content: "";
