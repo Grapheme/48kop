@@ -183,3 +183,39 @@
 		}
 	}
 }
+
+.advices-ul {
+	.list-unstyled;
+
+	.advices-li {
+		display: inline-block;
+		width: 476rem / @htmlFontSize;
+		text-align: left;
+		margin: 0 31rem / @htmlFontSize 0 0;
+		padding: 0 0 37rem / @htmlFontSize;
+		vertical-align: top;
+
+		.advices-head {
+			display: inline-block;
+			margin: 0 0 12em / @htmlFontSize;
+			font-size: 20em / @htmlFontSize;
+			line-height: 1;
+
+			a {
+				.transition;
+				color: inherit;
+				text-decoration: underline;
+				outline: none;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		.advices-body {
+			font-size: 14em / @htmlFontSize;
+			font-family: sans-serif;
+			font-weight: 300;
+		}
+	}
+}
