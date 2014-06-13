@@ -46,4 +46,20 @@ var App = (function(){
 	$(window).resize( function(){
 		alignBg();
 	});
+
+	$(document).on('click', '#login', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('[data-item="auth"]').removeClass('hidden');
+	});
+	$(document).on('click', '#feedback', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('[data-item="feedback"]').removeClass('hidden');
+	});
+	$(document).on('click', '.popup-close', function(e){
+		e.preventDefault();
+		$('.overlay').addClass('hidden');
+		$('.popup').addClass('hidden');
+	});
 })();
