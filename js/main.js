@@ -23,3 +23,18 @@ var Family = (function(){
 	str['boy'] = '<span class="age"><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст сына</label></span>';
 	str['gril'] = '<span class="age"><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст дочери</label></span>';
 })();
+
+var App = (function(){
+	var $top = $('.top');
+
+	var alignBg = function(){
+		$top.height( $(window).width() / 1.634 );
+	};
+
+	alignBg();
+
+	$(window).resize( function(){
+		alignBg();
+	});
+
+})();
