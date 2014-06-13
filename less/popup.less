@@ -1,5 +1,5 @@
 .overlay {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -55,7 +55,32 @@
 	.box-sizing;
 	width: 980rem / @htmlFontSize;
 	margin: 0 0 0 -980rem / @htmlFontSize / 2;
-	padding: 0 38rem / @htmlFontSize;
+
+	.rec-cont {
+		padding: 0 38rem / @htmlFontSize;
+	}
+
+	footer {
+		height: 100rem / @htmlFontSize;
+		margin: 26rem / @htmlFontSize 0 0;
+		background: url(../img/footer-light-bg.png) repeat-x 0 0 #FFB35F;
+		text-align: center;
+		line-height: 100rem / @htmlFontSize;
+
+		a {
+			.transition;
+			display: inline-block;
+			color: #0c7fc4;
+			border-bottom: 1px solid #0c7fc4;
+			text-decoration: none;
+			outline: none;
+			line-height: 16em / @htmlFontSize;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
 
 	.column {
 		display: inline-block;
@@ -80,6 +105,45 @@
 			font-size: 14em / @htmlFontSize;
 			line-height: 18.2em / 14;
 			font-family: sans-serif;
+		}
+		.likes-ul {
+			.list-unstyled;
+			margin: 27rem / @htmlFontSize 0 30rem / @htmlFontSize -3rem / @htmlFontSize;
+
+			.likes-li {
+				display: inline-block;
+				margin: 0 12rem / @htmlFontSize 0 0;
+				vertical-align: top;
+			}
+		}
+		.people-count {
+			display: inline-block;
+			margin: 0 0 0 6rem / @htmlFontSize; 
+			color: #666;
+			font-size: 12px;
+			font-family: sans-serif;
+
+			strong {
+				font-size: 14px;
+				color: #333;
+			}
+		}
+		.send-email {
+			.transition;
+			margin: 26rem / @htmlFontSize 0 0;
+			display: inline-block;
+
+			line-height: 1;
+			font-size: 14px;
+			font-family: sans-serif;
+			border-bottom: 1px dotted;
+			color: #0c80c4;
+			text-decoration: none;
+			outline: none;
+
+			&:hover {
+				border-color: transparent;
+			}
 		}
 	}
 }
