@@ -102,6 +102,142 @@ html {
 			}
 		}
 	}
+
+	.city-select {
+		background: rgba(255, 255, 255, .25);
+		border: 0 none;
+		height: 30rem / @htmlFontSize;
+		font-family: arial, sans-serif;
+		//width: 100%;
+	}
+
+	.father, .mother, .girl, .boy {
+		position: relative;
+		display: inline-block;
+		opacity: .5;
+		.transition;
+
+		&:hover, &.active {
+			opacity: 1;
+		}
+	}
+
+	.father {
+		width: 25rem / @htmlFontSize;
+		height: 64rem / @htmlFontSize;
+		background: url(../img/father.png) no-repeat 0 0 e('/') 100% 100%;
+	}
+
+	.mother {
+		width: 28rem / @htmlFontSize;
+		height: 59rem / @htmlFontSize;
+		background: url(../img/mother.png) no-repeat 0 0 e('/') 100% 100%;
+	}
+
+	.girl {
+		width: 17rem / @htmlFontSize;
+		height: 40rem / @htmlFontSize;
+		background: url(../img/girl.png) no-repeat 0 0 e('/') 100% 100%;
+
+		&.active {
+			.age {
+				opacity: 1;
+			}
+			margin: 0 5rem / @htmlFontSize;
+		} 
+	}
+
+	.boy {
+		width: 17rem / @htmlFontSize;
+		height: 47rem / @htmlFontSize;
+		background: url(../img/boy.png) no-repeat 0 0 e('/') 100% 100%;
+
+		&.active {
+			.age {
+				opacity: 1;
+			}
+			margin: 0 5rem / @htmlFontSize;
+		} 
+	}
+
+	.family-arrow {
+		.transition(opacity);
+		display: inline-block;
+		width: 18rem / @htmlFontSize;
+		height: 80%;
+		background: url(../img/family-arrow.png) no-repeat center center e('/') 100% 16rem / @htmlFontSize;
+		margin: 0 7rem / @htmlFontSize;
+		opacity: 0;
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
+	.family {
+		display: inline-block;
+		height: 70rem / @htmlFontSize;
+		margin-top: 5rem / @htmlFontSize;
+
+		.person {
+			.family-hint;
+			width: 70rem / @htmlFontSize;
+			display: none;
+			z-index: 2;
+		}
+
+		.age {
+			.transition(all, .05s, ease);
+			.box-sizing;
+			position: absolute;
+			bottom: -30rem / @htmlFontSize;
+			left: 50%;
+			margin-left: -12.5rem / @htmlFontSize;
+			width: 25rem / @htmlFontSize;
+			height: 25rem / @htmlFontSize;
+			border-radius: 5rem / @htmlFontSize;
+			line-height: 25rem / @htmlFontSize;
+			text-align: center;
+			color: #000;
+			font-size: 14rem / @htmlFontSize;
+			background: rgba(255, 255, 255, .5);
+			opacity: 0;
+			border-top: 2px solid transparent;
+			border-left: 2px solid transparent;
+			cursor: pointer;
+
+			input {
+				position: relative;
+				height: 100%;
+				line-height: 25rem / @htmlFontSize;
+				width: 90%;
+				border: 0 none;
+				text-align: center;
+				cursor: pointer;
+			}
+			label {
+				position: absolute;
+				top: 0; left: 0; right: 0; bottom: 0;
+				cursor: pointer;
+			}
+
+			.fill-age {
+				.family-hint;
+				display: none;
+			}
+
+			&:active {
+				background: #fff;
+				border-top: 2px solid #b8b8b8;
+				border-left: 2px solid #b8b8b8;
+			}
+			&.active {
+				background: #fff;
+				border-top: 2px solid #b8b8b8;
+				border-left: 2px solid #b8b8b8;
+			}
+		}
+	}
 }
 
 .mid {

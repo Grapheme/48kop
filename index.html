@@ -61,7 +61,7 @@
                                 </div>                                
                                 <div class="city-part">
                                     <label>Ваш город:</label>
-                                    <select>
+                                    <select class="city-select">
                                         <option selected>Ростов-на-Дону</option>
                                         <option>Азов</option>
                                     </select>
@@ -69,6 +69,28 @@
                             </section><!--
                          --><section class="family-form-part">
                                 <label>Укажите состав семьи:</label>
+                                <div class="family-cont">
+                                    <div class="family">
+                                        <a href="#" class=" family-item father"><span class="person">Папа</span></a>
+                                        <a href="#" class=" family-item mother"><span class="person">Мама</span></a>
+                                        <a href="#" class=" family-item boy"><span class="person">Сын</span></a>
+                                        <a href="#" class=" family-item girl"><span class="person">Дочь</span></a>
+                                        <i class="family-arrow"></i>
+                                        <a href="#" class="father active"></a>
+                                        <a href="#" class="mother active"></a>
+                                        <a href="#" class="boy active">
+                                            <span class="age">
+                                                <input name="age" maxlength="2" type="text">
+                                                <label class="fill-age">Укажите возраст сына</label>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="girl active">
+                                            <span class="age">
+                                                <input name="age" maxlength="2" type="text">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
                             </section><!--
                          --><section class="family-form-part">
                                 <label>Укажите ваши интересны:</label>
