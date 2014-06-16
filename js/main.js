@@ -174,6 +174,11 @@ var App = (function(){
 		$('.overlay').removeClass('hidden');
 		$('[data-item="auth"]').removeClass('hidden');
 	});
+	$(document).on('click', '.to-bot .button', function(e){
+		$('html,body').animate({
+			scrollTop: $(".mid-cont").offset().top
+		}, 800);
+	});
 	$(document).on('click', '#feedback', function(e){
 		e.preventDefault();
 		$('.overlay').removeClass('hidden');
