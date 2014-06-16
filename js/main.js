@@ -1,69 +1,102 @@
-var selectBox = new SelectBox($('.inters-select'));
+var FamilyForm = (function(){
 
-$(document).on('focus', '.age input', function(){
-	$(this).parent().addClass('active');
-	$('.family-item.focused').removeClass('focused');
-	$('.fill-age').hide();
-	if($(this).val() == '') {
-		$(this).parent().find('.fill-age').show();
-		$(this).parent().parent().addClass('focused');
-	}
-});
-$(document).on('focusout', '.age input', function(){
-	$(this).parent().removeClass('active');
-	if($(this).val() != '') {
-		$(this).parent().find('.fill-age').hide();
-		$(this).parent().parent().removeClass('focused');
-	}
-});
-$(document).on('input', '.age input', function(){
-	$('.family-item.focused').removeClass('focused');
-	if($(this).val() != '') {
-		$(this).parent().find('.fill-age').hide();
-		$(this).parent().parent().removeClass('focused');
-	}
-	if(parseInt($(this).val()) < 1 || parseInt($(this).val()) > 18 || !parseInt($(this).val())) {
-		var inp = $(this);
-		setTimeout(function(){
-			inp.val('');
-		}, 100);
-	}
-});
+	var selectBox = new SelectBox($('.inters-select'));
+	$('.city-select').selectBox();
 
+	$(document).on('focus', '.age input', function(){
+		$(this).parent().addClass('active');
+		$('.family-item.focused').removeClass('focused');
+		$('.fill-age').hide();
+		if($(this).val() == '') {
+			$(this).parent().find('.fill-age').show();
+			$(this).parent().parent().addClass('focused');
+		}
+	});
+	$(document).on('focusout', '.age input', function(){
+		$(this).parent().removeClass('active');
+		if($(this).val() != '') {
+			$(this).parent().find('.fill-age').hide();
+			$(this).parent().parent().removeClass('focused');
+		}
+	});
+	$(document).on('input', '.age input', function(){
+		$('.family-item.focused').removeClass('focused');
+		if($(this).val() != '') {
+			$(this).parent().find('.fill-age').hide();
+			$(this).parent().parent().removeClass('focused');
+		}
+		if(parseInt($(this).val()) < 1 || parseInt($(this).val()) > 18 || !parseInt($(this).val())) {
+			var inp = $(this);
+			setTimeout(function(){
+				inp.val('');
+			}, 100);
+		}
+	});
 
-$(document).on('mouseover', '.pers-img', function(){
-	$(this).parent().find('.person').fadeIn(100);
-});
-$(document).on('mouseleave', '.pers-img', function(){
-	$(this).parent().find('.person').fadeOut(100);
-});
+	$(document).on('mouseover', '.pers-img', function(){
+		$(this).parent().find('.person').fadeIn(100);
+	});
+	$(document).on('mouseleave', '.pers-img', function(){
+		$(this).parent().find('.person').fadeOut(100);
+	});
 
-$(document).on('click', '.cal-left', function(){
-	$('.calendar-in').removeClass('step');
-	$('.one-month[data-month=july]').removeClass('active');
-	$('.one-month[data-month=june]').addClass('active');
-});
+	$(document).on('click', '.cal-left', function(){
+		$('.calendar-in').removeClass('step');
+		$('.one-month[data-month=july]').removeClass('active');
+		$('.one-month[data-month=june]').addClass('active');
+	});
 
-$(document).on('click', '.cal-right', function(){
-	$('.calendar-in').addClass('step');
-	$('.one-month[data-month=july]').addClass('active');
-	$('.one-month[data-month=june]').removeClass('active');
-});
+	$(document).on('click', '.cal-right', function(){
+		$('.calendar-in').addClass('step');
+		$('.one-month[data-month=july]').addClass('active');
+		$('.one-month[data-month=june]').removeClass('active');
+	});
 
-$(document).on('focus', 'input[name=date]', function(){
-	$('.calendar').removeClass('closed');
-});
+	$(document).on('focus', 'input[name=date]', function(){
+		$('.calendar').removeClass('closed');
+	});
 
-$(document).on('change', '.inters-select', function(){
-	if($(this).val() == '0') {
-		return;
-	}
-	//$(this).find('option[value=' + $(this).val() + ']').remove();
-	//selectBox.destroy();
-	//$('.selectBox-dropdown-menu li[rel=' + $(this).val() + ']').css('display', 'none');
-	var text = $('.inters-select option[value=' + $(this).val() + ']').text();
-	$('.inters').prepend('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
-});
+	$(document).on('change', '.inters-select', function(){
+		if($(this).val() == '0') {
+			return;
+		}
+		//selectBox.destroy();
+		//$('.selectBox-dropdown-menu li[rel=' + $(this).val() + ']').css('display', 'none');
+		var text = $('.inters-select option[value=' + $(this).val() + ']').text();
+		$('.inters').prepend('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
+		$(this).find('option[value=' + $(this).val() + ']').remove();
+		selectBox.destroy();
+		selectBox.init();
+	});
+
+	$(document).on('click', '.int-cross', function(){
+		var value = $(this).parent().attr('data-value');
+		var pre_text = $(this).parent().text();
+		var text = pre_text.substr(0,(pre_text.length -1));
+		$('.inters-select').append('<option value="' + value + '">' + text + '</option>');
+		var pre_text = $(this).parent().remove();
+		selectBox.destroy();
+		selectBox.init();
+	});
+
+	$(document).on('click', '.day.click-allow', function(){
+		$('input[name=date]').val($(this).text() + ' ' + $(this).parent().parent().attr('data-month-cyr'));
+		$('.calendar').addClass('closed');
+	});
+
+	$(document).on('click', '.family-btn', function(){
+		var interests = []; 
+		$('.inters-clicked').each(function(){
+			interests.push('"' + $(this).attr('data-value') + '"');
+		});
+
+		var family = '{"father": 0,	"mother": 0, "children": [0, 0, 0]}';
+		var json_str = '{"date": "", "interests": [' + interests + '], "family": ' + family + '}';
+		//alert(json_str);
+		return false;
+	});
+
+})();
 
 var Family = (function(){
 

@@ -303,6 +303,10 @@ html {
   outline: none;
   border-bottom: 1px dotted #fff;
 }
+.top .family-form .family-form-part input[name=date] {
+  padding-left: 0.625rem;
+  color: #fff;
+}
 .top .family-form .date-part {
   position: relative;
 }
@@ -347,17 +351,21 @@ html {
 }
 .top .selectBox-dropdown {
   height: 1.875rem;
-  line-height: 1.875rem;
+  line-height: 1.6875rem;
   border-radius: 0.9375rem;
   font-family: arial, sans-serif;
   padding-left: 0.3125rem;
-  padding-right: 1.25rem;
+  padding-right: 1.5625rem;
 }
 .top .selectBox-label {
-  padding-right: 1.25rem;
+  font-size: 0.875rem;
+  padding-right: 1.5625rem;
+  padding-left: 0.625rem;
 }
 .top .city-select {
   width: 80%;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
 }
 .top .family-item {
   position: relative;
@@ -735,6 +743,7 @@ html {
   line-height: 1.875rem;
   background: rgba(255, 255, 255, 0.5);
   margin: 0 0.3125rem 0.625rem 0;
+  font-size: 0.875rem;
 }
 .inters-clicked .int-cross {
   position: absolute;
@@ -743,6 +752,21 @@ html {
   text-align: center;
   font-size: 0.75rem;
   cursor: pointer;
+}
+.family-btn-cont {
+  text-align: center;
+  margin-top: 2.1875rem;
+  margin-bottom: 1.5625rem;
+}
+.family-btn-cont .family-btn {
+  color: #126cb6;
+  font-size: 1.125rem;
+  border-radius: 2.1875rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  padding: 0 1.5625rem;
+  background: #fff;
+  border: 0 none;
 }
 .footer {
   -webkit-box-sizing: border-box;
