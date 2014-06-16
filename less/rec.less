@@ -2,13 +2,25 @@
 	.box-sizing;
 	width: 100%;
 	margin: -94rem / @htmlFontSize auto 0;
-	padding: 94rem / @htmlFontSize 0 0;
+	padding: 94rem / @htmlFontSize 0 45rem / @htmlFontSize;
 	background: url(../img/ellipse.png) no-repeat center 0 #126eb7;
 
 	&+.footer {
-		background: url("../img/footer-bg.png") repeat-x scroll 0 0 #2056a0;
-		padding-top: 1.5rem;
+		position: relative;
+		margin-top: -11rem / @htmlFontSize;
+		background: #2056a0;
+		padding-top: 11rem / @htmlFontSize;
 		height: 15rem;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			bottom: 100%;
+			width: 100%;
+			content: "";
+			background: url("../img/footer-bg.png") repeat-x scroll 0 0;
+			height: 11rem / @htmlFontSize;
+		}
 	}
 
 	h2 {
