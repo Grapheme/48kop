@@ -271,7 +271,7 @@ html {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 61.25rem;
-  height: 22rem;
+  min-height: 22rem;
   margin: 0 auto;
   padding: 0 1.375rem;
   border: 2px solid #fff;
@@ -302,6 +302,9 @@ html {
   border: none;
   outline: none;
   border-bottom: 1px dotted #fff;
+}
+.top .family-form .date-part {
+  position: relative;
 }
 .top .family-form .date-part label {
   position: relative;
@@ -349,7 +352,6 @@ html {
   font-family: arial, sans-serif;
   padding-left: 0.3125rem;
   padding-right: 1.25rem;
-  margin-top: 0.625rem;
 }
 .top .selectBox-label {
   padding-right: 1.25rem;
@@ -634,6 +636,113 @@ html {
   width: 25rem;
   height: 28.375rem;
   background: url(../img/snowman.png) no-repeat;
+}
+.calendar {
+  position: absolute;
+  top: -9.375rem;
+  right: -18.75rem;
+  width: 23.75rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.625rem;
+  background: #fff;
+  border-radius: 0.625rem;
+  z-index: 10;
+  color: #ccc;
+  overflow: hidden;
+}
+.calendar.closed {
+  display: none;
+}
+.calendar .cal-left {
+  position: absolute;
+  left: 2.1875rem;
+  top: 1.5625rem;
+  width: 0.75rem;
+  height: 1.3125rem;
+  background: url(../img/cal-left.png) no-repeat center center / 100% 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.calendar .cal-right {
+  position: absolute;
+  right: 2.1875rem;
+  top: 1.5625rem;
+  width: 0.75rem;
+  height: 1.3125rem;
+  background: url(../img/cal-right.png) no-repeat center center / 100% 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+.calendar .month {
+  position: relative;
+  font-size: 1.5rem;
+  color: #215daf;
+  text-align: center;
+  margin: 1.25rem auto;
+  padding-left: 1.25rem;
+}
+.calendar .weekend {
+  color: #f42c61;
+}
+.calendar .weekdays {
+  font-weight: 300;
+}
+.calendar .weekdays .weekday {
+  display: inline-block;
+  width: 14%;
+}
+.calendar .days-row {
+  height: 2.5rem;
+  line-height: 2.5rem;
+}
+.calendar .days-row .day:last-child {
+  color: #f42c61;
+  cursor: pointer;
+}
+.calendar .day {
+  font-size: 1.25rem;
+  width: 14%;
+  display: inline-block;
+  cursor: default;
+}
+.calendar .calendar-in {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  width: 62.5rem;
+}
+.calendar .calendar-in.step {
+  -webkit-transform: translateX(-23.75rem);
+  transform: translateX(-23.75rem);
+}
+.calendar .one-month {
+  vertical-align: top;
+  display: inline-block;
+  width: 23.75rem;
+  text-align: center;
+}
+.inters {
+  margin-top: 0.625rem;
+}
+.inters-clicked {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  font-family: sans-serif;
+  border-radius: 0.9375rem;
+  padding: 0 1.5625rem 0 0.625rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 0.3125rem 0.625rem 0;
+}
+.inters-clicked .int-cross {
+  position: absolute;
+  width: 1.5625rem;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  cursor: pointer;
 }
 .footer {
   -webkit-box-sizing: border-box;

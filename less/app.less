@@ -21,7 +21,7 @@ html {
 	.family-form {
 		.box-sizing;
 		width: 980rem / @htmlFontSize;
-		height: 22rem;
+		min-height: 22rem;
 		margin: 0 auto;
 		padding: 0 22rem / @htmlFontSize;
 		border: 2px solid #fff;
@@ -60,6 +60,8 @@ html {
 		}
 
 		.date-part {
+			position: relative;
+
 			label {
 				position: relative;
 			}
@@ -114,7 +116,6 @@ html {
 		font-family: arial, sans-serif;
 		padding-left: 5rem / @htmlFontSize;
 		padding-right: 20rem / @htmlFontSize;
-		margin-top: 10rem / @htmlFontSize;
 	}
 	.selectBox-label {
 		padding-right: 20rem / @htmlFontSize;
@@ -350,5 +351,127 @@ html {
 		width: 400rem / @htmlFontSize;
 		height: 454rem / @htmlFontSize;
 		background: url(../img/snowman.png) no-repeat;
+	}
+}
+
+.calendar {
+	position: absolute;
+	top: -150rem / @htmlFontSize; right: -300rem / @htmlFontSize;
+	width: 380rem / @htmlFontSize;
+	padding-right: 20rem / @htmlFontSize;
+	padding-bottom: 10rem / @htmlFontSize;
+	//height: 270rem / @htmlFontSize;
+	background: #fff;
+	border-radius: 10rem / @htmlFontSize;
+	z-index: 10;
+	color: #ccc;
+	overflow: hidden;
+
+	&.closed {
+		display: none;
+	}
+
+	.cal-left {
+		position: absolute;
+		left: 35rem / @htmlFontSize;
+		top: 25rem / @htmlFontSize;
+		width: 12rem / @htmlFontSize;
+		height: 21rem / @htmlFontSize;
+		background: url(../img/cal-left.png) no-repeat center center e('/') 100% 100%;
+		cursor: pointer;
+		z-index: 1;
+	}
+	.cal-right {
+		position: absolute;
+		right: 35rem / @htmlFontSize;
+		top: 25rem / @htmlFontSize;
+		width: 12rem / @htmlFontSize;
+		height: 21rem / @htmlFontSize;
+		background: url(../img/cal-right.png) no-repeat center center e('/') 100% 100%;
+		cursor: pointer;
+		z-index: 1;
+	}
+
+	.month {
+		position: relative;
+		font-size: 24rem / @htmlFontSize;
+		color: #215daf;
+		text-align: center;
+		margin: 20rem / @htmlFontSize auto;
+		padding-left: 20rem / @htmlFontSize;
+	}
+
+	.weekend {
+		color: #f42c61;
+	}
+
+	.weekdays {
+		font-weight: 300;
+
+		.weekday {
+			display: inline-block;
+			width: 14%;
+		}
+	}
+
+	.days-row {
+		height: 40rem / @htmlFontSize;
+		line-height: 40rem / @htmlFontSize;
+
+		.day:last-child {
+			color: #f42c61;
+			cursor: pointer;
+		}
+	}
+
+	.day {
+		font-size: 20rem / @htmlFontSize;
+		width: 14%;
+		display: inline-block;
+		cursor: default;
+	}
+
+	.calendar-in {
+		.transition;
+		position: relative;
+		width: 1000rem / @htmlFontSize;
+
+		&.step {
+			-webkit-transform: translateX(-380rem / @htmlFontSize);
+			transform: translateX(-380rem / @htmlFontSize);
+		}
+	}
+
+	.one-month {
+		vertical-align: top;
+		display: inline-block;
+		width: 380rem / @htmlFontSize;
+		text-align: center;
+	}
+}
+
+.inters {
+	margin-top: 10rem / @htmlFontSize;
+}
+
+.inters-clicked {
+	position: relative;
+	display: inline-block;
+	color: #000;
+	font-family: sans-serif;
+	border-radius: 15rem / @htmlFontSize;
+	padding: 0 25rem / @htmlFontSize 0 10rem / @htmlFontSize;
+	height: 30rem / @htmlFontSize;
+	line-height: 30rem / @htmlFontSize;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 0 5rem / @htmlFontSize 10rem / @htmlFontSize 0;
+
+	.int-cross {
+		position: absolute;
+		width: 25rem / @htmlFontSize;
+		right: 0;
+		text-align: center;
+		font-size: 12rem / @htmlFontSize;
+		cursor: pointer;
 	}
 }

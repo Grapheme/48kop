@@ -90,12 +90,12 @@
                 select.trigger('blur');
             });
 
-        if (!$(window).data('selectBox-bindings')) {
+        /*if (!$(window).data('selectBox-bindings')) {
             $(window)
                 .data('selectBox-bindings', true)
                 .bind('scroll.selectBox', this.hideMenus)
                 .bind('resize.selectBox', this.hideMenus);
-        }
+        }*/
 
         if (select.attr('disabled')) {
             control.addClass('selectBox-disabled');

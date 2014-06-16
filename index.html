@@ -13,7 +13,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="css/fonts.css">
-        <link href="css/jquery.selectbox.css" rel="stylesheet">
+        <link href="css/jquery.selectBox.css" rel="stylesheet">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -56,9 +56,129 @@
                                 <div class="date-part">
                                     <label>
                                         Дата:
-                                        <input type="text">
+                                        <input type="text" name="date">
                                         <span class="cal-icon icon icon-calendar"></span>
                                     </label>
+                                    <div class="calendar closed">
+                                        <i class="cal-left"></i>
+                                        <i class="cal-right"></i>
+                                        <div class="calendar-in">
+                                            <div data-month="june" class="one-month active">
+                                                <div class="month">
+                                                    Июнь 2014
+                                                </div>
+                                                <div class="weekdays">
+                                                    <span class="weekday">пн</span>
+                                                    <span class="weekday">вт</span>
+                                                    <span class="weekday">ср</span>
+                                                    <span class="weekday">чт</span>
+                                                    <span class="weekday">пт</span>
+                                                    <span class="weekday weekend">сб-вс</span>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day"></i>
+                                                    <i class="day"></i>
+                                                    <i class="day"></i>
+                                                    <i class="day"></i>
+                                                    <i class="day"></i>
+                                                    <i class="day">1</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">2</i>
+                                                    <i class="day">3</i>
+                                                    <i class="day">4</i>
+                                                    <i class="day">5</i>
+                                                    <i class="day">6</i>
+                                                    <i class="day">7-8</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">9</i>
+                                                    <i class="day">10</i>
+                                                    <i class="day">11</i>
+                                                    <i class="day">12</i>
+                                                    <i class="day">13</i>
+                                                    <i class="day">14-15</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">16</i>
+                                                    <i class="day">17</i>
+                                                    <i class="day">18</i>
+                                                    <i class="day">19</i>
+                                                    <i class="day">20</i>
+                                                    <i class="day">21-22</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">23</i>
+                                                    <i class="day">24</i>
+                                                    <i class="day">25</i>
+                                                    <i class="day">26</i>
+                                                    <i class="day">27</i>
+                                                    <i class="day">28-29</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">30</i>
+                                                    <i class="day">&nbsp;</i>
+                                                    <i class="day">&nbsp;</i>
+                                                    <i class="day">&nbsp;</i>
+                                                    <i class="day">&nbsp;</i>
+                                                    <i class="day">&nbsp;</i>
+                                                </div>
+                                            </div>
+                                            <div data-month="july" class="one-month">
+                                                <div class="month">
+                                                    Июль 2014
+                                                </div>
+                                                <div class="weekdays">
+                                                    <span class="weekday">пн</span>
+                                                    <span class="weekday">вт</span>
+                                                    <span class="weekday">ср</span>
+                                                    <span class="weekday">чт</span>
+                                                    <span class="weekday">пт</span>
+                                                    <span class="weekday weekend">сб-вс</span>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day"></i>
+                                                    <i class="day">1</i>
+                                                    <i class="day">2</i>
+                                                    <i class="day">3</i>
+                                                    <i class="day">4</i>
+                                                    <i class="day">5-6</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">7</i>
+                                                    <i class="day">8</i>
+                                                    <i class="day">9</i>
+                                                    <i class="day">10</i>
+                                                    <i class="day">11</i>
+                                                    <i class="day">12-13</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">14</i>
+                                                    <i class="day">15</i>
+                                                    <i class="day">16</i>
+                                                    <i class="day">17</i>
+                                                    <i class="day">18</i>
+                                                    <i class="day">19-20</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">21</i>
+                                                    <i class="day">22</i>
+                                                    <i class="day">23</i>
+                                                    <i class="day">24</i>
+                                                    <i class="day">25</i>
+                                                    <i class="day">26-27</i>
+                                                </div>
+                                                <div class="days-row">
+                                                    <i class="day">28</i>
+                                                    <i class="day">29</i>
+                                                    <i class="day">30</i>
+                                                    <i class="day">31</i>
+                                                    <i class="day"></i>
+                                                    <i class="day"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>                                
                                 <div class="city-part">
                                     <label>Ваш город:</label>
@@ -97,12 +217,13 @@
                             </section><!--
                          --><section class="family-form-part">
                                 <label>Укажите ваши интересны:</label>
-                                <select>
-                                    <option selected>Интересы</option>
-                                    <option>Drugs</option>
-                                    <option>Sex</option>
-                                    <option>Rock'n'Roll</option>
-                                </select>
+                                <div class="inters">
+                                    <select class="inters-select">
+                                        <option selected value="0">Интересы</option>
+                                        <option value="walk">Прогулки</option>
+                                        <option value="travel">Путешествия</option>
+                                    </select>
+                                </div>
                             </section>
                         </fieldset>
                     </form>

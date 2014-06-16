@@ -1,4 +1,4 @@
-$('select').selectBox();
+var selectBox = new SelectBox($('.inters-select'));
 
 $(document).on('focus', '.age input', function(){
 	$(this).parent().addClass('active');
@@ -36,6 +36,33 @@ $(document).on('mouseover', '.pers-img', function(){
 });
 $(document).on('mouseleave', '.pers-img', function(){
 	$(this).parent().find('.person').fadeOut(100);
+});
+
+$(document).on('click', '.cal-left', function(){
+	$('.calendar-in').removeClass('step');
+	$('.one-month[data-month=july]').removeClass('active');
+	$('.one-month[data-month=june]').addClass('active');
+});
+
+$(document).on('click', '.cal-right', function(){
+	$('.calendar-in').addClass('step');
+	$('.one-month[data-month=july]').addClass('active');
+	$('.one-month[data-month=june]').removeClass('active');
+});
+
+$(document).on('focus', 'input[name=date]', function(){
+	$('.calendar').removeClass('closed');
+});
+
+$(document).on('change', '.inters-select', function(){
+	if($(this).val() == '0') {
+		return;
+	}
+	//$(this).find('option[value=' + $(this).val() + ']').remove();
+	//selectBox.destroy();
+	//$('.selectBox-dropdown-menu li[rel=' + $(this).val() + ']').css('display', 'none');
+	var text = $('.inters-select option[value=' + $(this).val() + ']').text();
+	$('.inters').prepend('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
 });
 
 var Family = (function(){
