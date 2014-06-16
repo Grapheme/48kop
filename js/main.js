@@ -48,6 +48,7 @@ var Family = (function(){
 	str['girl'] = '<a href="#" class="family-item active focused" data-person="girl"><span class="pers-img"></span><span class="age"><input name="age" maxlength="2" type="text"><label class="fill-age">Укажите возраст дочери</label></span></a>';
 
 	var item = {
+
 		add: function(that) {
 
 			function hmuch(type) {
@@ -81,10 +82,6 @@ var Family = (function(){
 			/*============*/
 
 			$('.family-arrow').addClass('active');
-
-			if(type == 'boy' || type == 'girl') {
-				$('.fill-age').hide();
-			}
 			$('.family-item.focused').removeClass('focused');
 
 			if(type == 'father') {
@@ -105,6 +102,11 @@ var Family = (function(){
 			} else {
 				$('.family-after').append(str[type]);
 			}
+
+			if(type == 'boy' || type == 'girl') {
+				$('.fill-age').hide();
+				$('.family-item.focused .fill-age').show();
+			}
 		},
 
 		rm: function(that) {
@@ -113,7 +115,7 @@ var Family = (function(){
 				$('.family-arrow').removeClass('active');
 			}
 		}
-	}
+	};
 
 	$(document).on('click', '.f-step', function(){
 		item.add($(this));
@@ -122,5 +124,35 @@ var Family = (function(){
 	$(document).on('click', '.family-item.active .pers-img', function(){
 		item.rm($(this).parent());
 		return false;
+	});
+})();
+
+var App = (function(){
+	var $top = $('.top');
+
+	var alignBg = function(){
+		$top.height( $(window).width() / 1.634 );
+	};
+
+	alignBg();
+
+	$(window).resize( function(){
+		alignBg();
+	});
+
+	$(document).on('click', '#login', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('[data-item="auth"]').removeClass('hidden');
+	});
+	$(document).on('click', '#feedback', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('[data-item="feedback"]').removeClass('hidden');
+	});
+	$(document).on('click', '.popup-close', function(e){
+		e.preventDefault();
+		$('.overlay').addClass('hidden');
+		$('.popup').addClass('hidden');
 	});
 })();
