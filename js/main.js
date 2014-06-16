@@ -1,4 +1,4 @@
-var selectBox = new SelectBox($('.inters-select'));
+/*var selectBox = new SelectBox($('.inters-select'));*/
 
 $(document).on('focus', '.age input', function(){
 	$(this).parent().addClass('active');
@@ -183,5 +183,21 @@ var App = (function(){
 		e.preventDefault();
 		$('.overlay').addClass('hidden');
 		$('.popup').addClass('hidden');
+	});
+
+	$(document).on('click', '.send-email', function(e){
+		e.preventDefault();
+		var form = $(this).next();
+
+		if(form.css('display') == 'none') {
+			form.show();
+		}
+		else {
+			form.hide();
+		}
+	});
+	$(document).on('click', '#sendEmailSubmit', function(e){
+		e.preventDefault();
+		$(this).parent().html('<span class="success">Ваша рекомендация успешно<br>отправлена вашему другу</span>');
 	});
 })();

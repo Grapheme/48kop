@@ -59,6 +59,86 @@
 	.rec-cont {
 		padding: 0 38rem / @htmlFontSize;
 	}
+	
+	.send-email-cont {
+		position: relative;
+		display: inline-block;
+	}
+
+	.send-email-form {
+		display: none;
+		.box-sizing;
+		position: absolute;
+		top: -20%;
+		left: 115%;
+		width: 383rem / @htmlFontSize;
+		height: 82rem / @htmlFontSize;
+		padding: 20rem / @htmlFontSize 10rem / @htmlFontSize 20rem / @htmlFontSize 18rem / @htmlFontSize;
+		border: 1px solid #ccc;
+		border-radius: 6rem / @htmlFontSize;
+		background: #fff;
+		box-shadow: 3px 3px 0 0 rgba(102, 102, 102, .5);
+
+		.success {
+			color: #666;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 29px;
+			right: 100%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 12px 12px 12px 0;
+			border-color: transparent #ccc transparent transparent;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 30px;
+			right: 100%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 11px 11px 11px 0;
+			border-color: transparent #fff transparent transparent;
+		}
+
+		input {
+			.box-sizing;
+			display: inline-block;
+			width: 275rem / @htmlFontSize;
+			height: 2.5rem;
+			margin: 0 13rem / @htmlFontSize 0 0;
+			padding: 0 14rem / @htmlFontSize;
+			border: 1px solid #ccc;
+			border-radius: 2rem;
+			outline: none;
+			font-family: 'proxima_nova', sans-serif;
+		}
+
+		button {
+			.transition;
+			width: 53rem / @htmlFontSize;
+			height: 2.4rem;
+			padding: 0;
+			display: inline-block;
+			border: none;
+			border-radius: 2rem;
+			text-transform: capitalize;
+			font-weight: normal;
+			font-family: 'proxima_nova', sans-serif;
+			background: #0d81c4;
+			color: #fff;
+
+			&:hover {
+				opacity: .85;
+			}
+		}
+	}
 
 	footer {
 		height: 100rem / @htmlFontSize;
