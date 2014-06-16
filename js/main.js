@@ -98,6 +98,36 @@ var FamilyForm = (function(){
 
 })();
 
+$(document).on('focus', '.age input', function(){
+	$(this).parent().addClass('active');
+	$('.family-item.focused').removeClass('focused');
+	$('.fill-age').hide();
+	if($(this).val() == '') {
+		$(this).parent().find('.fill-age').show();
+		$(this).parent().parent().addClass('focused');
+	}
+});
+$(document).on('focusout', '.age input', function(){
+	$(this).parent().removeClass('active');
+	if($(this).val() != '') {
+		$(this).parent().find('.fill-age').hide();
+		$(this).parent().parent().removeClass('focused');
+	}
+});
+$(document).on('input', '.age input', function(){
+	$('.family-item.focused').removeClass('focused');
+	if($(this).val() != '') {
+		$(this).parent().find('.fill-age').hide();
+		$(this).parent().parent().removeClass('focused');
+	}
+	if(parseInt($(this).val()) < 1 || parseInt($(this).val()) > 18 || !parseInt($(this).val())) {
+		var inp = $(this);
+		setTimeout(function(){
+			inp.val('');
+		}, 100);
+	}
+});
+
 var Family = (function(){
 
 	var str = [];
@@ -216,5 +246,26 @@ var App = (function(){
 		e.preventDefault();
 		$('.overlay').addClass('hidden');
 		$('.popup').addClass('hidden');
+	});
+
+	$(document).on('click', '.send-email', function(e){
+		e.preventDefault();
+		var form = $(this).next();
+
+		if(form.css('display') == 'none') {
+			form.show();
+		}
+		else {
+			form.hide();
+		}
+	});
+	$(document).on('click', '#sendEmailSubmit', function(e){
+		e.preventDefault();
+		$(this).parent().html('<span class="success">Ваша рекомендация успешно<br>отправлена вашему другу</span>');
+	});
+	$(document).on('click', '.places-link, .events-link, .advices-head > a', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('.popup.rec').removeClass('hidden');
 	});
 })();
