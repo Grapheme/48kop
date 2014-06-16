@@ -32,6 +32,28 @@
 }
 
 @font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima_nova_light_0-webfont.eot');
+    src: url('../fonts/proxima_nova_light_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima_nova_light_0-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_light_0-webfont.ttf') format('truetype'),
+         url('../fonts/proxima_nova_light_0-webfont.svg#proxima_nova_ltlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('../fonts/proxima_nova_regular_0-webfont.eot');
+    src: url('../fonts/proxima_nova_regular_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima_nova_regular_0-webfont.woff') format('woff'),
+         url('../fonts/proxima_nova_regular_0-webfont.ttf') format('truetype'),
+         url('../fonts/proxima_nova_regular_0-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'fontello';
   src: url('../fonts/fontello.eot?87790381');
   src: url('../fonts/fontello.eot?87790381#iefix') format('embedded-opentype'),
