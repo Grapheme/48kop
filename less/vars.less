@@ -26,6 +26,7 @@
 }
 
 .i-will {
+	.transition;
 	.box-sizing;
 	display: inline-block;
 	width: 108rem / @htmlFontSize;
@@ -33,13 +34,22 @@
 	line-height: 32rem / @htmlFontSize;
 	padding: 0 28rem / @htmlFontSize 0 0;
 	font-size: 14em / @htmlFontSize;
-	background: url(../img/speedrun.png) no-repeat 76rem / @htmlFontSize 4rem / @htmlFontSize #f0375e;
+	background: url(../img/speedrun.png) no-repeat 76rem / @htmlFontSize 4rem / @htmlFontSize #0c7fc4;
 	text-align: center;
 	border-radius: 16rem / @htmlFontSize;
 	cursor: pointer;
 	box-shadow: 1px 1px 0 0 rgba(0, 0, 0, .2);
 
+	&:hover {
+		background-color: #f0375e;
+	}
+
 	&:active {
+		box-shadow: inset 2px 2px 0 0 rgba(0, 0, 0, .2);
+	}
+
+	&.active {
+		background-color: #f0375e;
 		box-shadow: inset 2px 2px 0 0 rgba(0, 0, 0, .2);
 	}
 }

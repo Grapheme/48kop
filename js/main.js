@@ -43,6 +43,8 @@ var App = (function(){
 
 	alignBg();
 
+	$('.overlay.no-fix').height( $(document).height() );
+
 	$(window).resize( function(){
 		alignBg();
 	});
