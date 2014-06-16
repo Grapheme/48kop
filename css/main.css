@@ -1094,13 +1094,24 @@ html {
   box-sizing: border-box;
   width: 100%;
   margin: -5.875rem auto 0;
-  padding: 5.875rem 0 0;
+  padding: 5.875rem 0 2.8125rem;
   background: url(../img/ellipse.png) no-repeat center 0 #126eb7;
 }
 .recomendations + .footer {
-  background: url("../img/footer-bg.png") repeat-x scroll 0 0 #2056a0;
-  padding-top: 1.5rem;
+  position: relative;
+  margin-top: -0.6875rem;
+  background: #2056a0;
+  padding-top: 0.6875rem;
   height: 15rem;
+}
+.recomendations + .footer:before {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 100%;
+  content: "";
+  background: url("../img/footer-bg.png") repeat-x scroll 0 0;
+  height: 0.6875rem;
 }
 .recomendations h2 {
   margin: -0.6rem 0 1.6rem;
@@ -1351,6 +1362,102 @@ html {
   top: 0;
   left: 0;
   font-family: 'fontello';
+}
+.product {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin: -5.875rem auto 0;
+  padding: 5.875rem 0 0;
+  background: url(../img/ellipse.png) no-repeat center 0 #126eb7;
+}
+.product + .footer {
+  position: relative;
+  margin-top: -0.6875rem;
+  background: #2056a0;
+  padding-top: 0.6875rem;
+  height: 15rem;
+}
+.product + .footer:before {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  width: 100%;
+  content: "";
+  background: url("../img/footer-bg.png") repeat-x scroll 0 0;
+  height: 0.6875rem;
+}
+.product .rec-filter {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 1.125em;
+}
+.product .rec-filter .rec-filter-li {
+  display: inline-block;
+  margin: 0 1.1875rem 0 0;
+  padding: 0.625rem 0.75rem 0.5rem;
+  border-radius: 1rem;
+}
+.product .rec-filter .rec-filter-li.active {
+  background: #0e5792;
+}
+.product .rec-filter .rec-filter-li.active a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+.product .rec-filter .rec-filter-li.active a:hover {
+  border-color: transparent;
+}
+.product .rec-filter .rec-filter-li a {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  line-height: .75;
+  color: inherit;
+  text-decoration: none;
+}
+.product .rec-filter .rec-filter-li a:hover {
+  border-color: inherit;
+}
+.product h2 {
+  margin: 3.375rem 0 0.5rem;
+  line-height: 1.2em;
+  font-size: 2.5em;
+  text-align: center;
+  text-shadow: 2px 2px #0d4c7f;
+}
+.product .product-desc {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  text-align: center;
+  text-shadow: 2px 2px #0d4c7f;
+}
+.product .fotorama {
+  margin: 7.5625rem auto 0;
+  text-align: center;
+}
+.product .fotorama .fotorama__html {
+  margin: 0 auto;
+}
+.product .fotorama .fotorama__arr {
+  top: 33%;
+  background: none;
+}
+.product .fotorama .fotorama__arr--prev:before {
+  content: "\e80a";
+  font-family: 'fontello';
+  font-size: 2em;
+}
+.product .fotorama .fotorama__arr--next:before {
+  content: "\e80b";
+  font-family: 'fontello';
+  font-size: 2em;
 }
 /* ==========================================================================
    Helper classes
