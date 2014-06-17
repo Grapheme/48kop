@@ -114,9 +114,9 @@ var FamilyForm = (function(){
 			});
 		}
 
-		var family = '{"father": ' + father + ', "mother": ' + mother + ', "children": ' + children + '}';
+		var family = '{"father": ' + father + ', "mother": ' + mother + ', "children": [' + children + ']}';
 		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + '}';
-		//alert(json_str);
+		alert(json_str);
 		return false;
 	});
 
