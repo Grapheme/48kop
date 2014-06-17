@@ -350,6 +350,7 @@ html {
   margin-top: 0.9375rem;
 }
 .top .selectBox-dropdown {
+  outline: 0;
   height: 1.875rem;
   line-height: 1.6875rem;
   border-radius: 0.9375rem;
