@@ -32,6 +32,17 @@
 }
 
 @font-face {
+    font-family: 'kiddy_kitty';
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-light-webfont.eot');
+    src: url('../fonts/alexandra_korolkova_-_kiddykitty-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-light-webfont.woff') format('woff'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-light-webfont.ttf') format('truetype'),
+         url('../fonts/alexandra_korolkova_-_kiddykitty-light-webfont.svg#kiddy_kittylight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'proxima_nova';
     src: url('../fonts/proxima_nova_light_0-webfont.eot');
     src: url('../fonts/proxima_nova_light_0-webfont.eot?#iefix') format('embedded-opentype'),
