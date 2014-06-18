@@ -124,23 +124,35 @@ $(document).on('submit', '.feedback-form', function(e){
     ///////////////////////////////////////////////////////
     // AJAX form submit request
     ///////////////////////////////////////////////////////
+    $(".form-error").removeClass("showed");
+    var btn = $(this).find("button");
+    $(btn).hide();
     $.ajax({
         url : $(this).attr("action"),
-        type: "POST",
         data: $(this).serializeArray(),
-        success: function(data, textStatus, jqXHR) {
-            //data: return data from server
-            alert(data);
+        type:    "POST",
+        dataType: "json",
+        success: function(response, textStatus, jqXHR) {
+            //response: return JSON data from server
+            console.log(response);
+            if (response.status == true) {
+                //alert("ALL OK!");
+                $(".popup.feedback .popup-desc").html("<br/><p>Ваше сообщение успешно отправлено.</p><p>Спасибо за внимание к нашему проекту.</p><br/><br/>");
+                $(".feedback-form").hide();
+            }
             return false;
         },
         error: function(jqXHR, textStatus, errorThrown) {
             //if fails
-            alert("ERROR: " + textStatus);
+            //alert("ERROR: " + jqXHR);
+            console.log(jqXHR);
+            $(".form-error").addClass("showed");
+            $(btn).show();
             return false;
         }
     });
     e.preventDefault(); //STOP default action
-    e.unbind(); //unbind. to stop multiple form submit.
+    //e.unbind(); //unbind. to stop multiple form submit.
     ///////////////////////////////////////////////////////
 
 });
