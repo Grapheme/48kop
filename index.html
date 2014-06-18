@@ -51,6 +51,9 @@
                                 Заполни анкету и получи рекомендации на выходные!
                             </div>
                         </div>
+                        <div class="form-error">
+                            <span>К сожалению при отправке формы произошел сбой. Попробуйте позже</span>
+                        </div>
                         <fieldset>
                             <section class="family-form-part">
                                 <div class="date-part">
@@ -59,6 +62,9 @@
                                         <input type="text" name="date">
                                         <span class="cal-icon icon icon-calendar"></span>
                                     </label>
+                                    <div class="form-error input-error">
+                                        <span>Вы не указали дату</span>
+                                    </div>
                                     <div class="calendar closed">
                                         <i class="cal-left"></i>
                                         <i class="cal-right"></i>
@@ -214,6 +220,9 @@
                                         <div class="family-after"></div>
                                     </div>
                                 </div>
+                                <div class="form-error input-error">
+                                    <span>Вы не указали состав семьи</span>
+                                </div>
                             </section><!--
                          --><section class="family-form-part">
                                 <label>Укажите ваши интересы:</label>
@@ -223,6 +232,9 @@
                                         <option value="walk">Прогулки</option>
                                         <option value="travel">Путешествия</option>
                                     </select>
+                                </div>
+                                <div class="form-error input-error">
+                                    <span>Вы не указали ни одного интереса</span>
                                 </div>
                             </section>
                         </fieldset>
