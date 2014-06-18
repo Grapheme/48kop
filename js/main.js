@@ -93,7 +93,7 @@ function validateEmail(x) {
     }
 }
 
-$(document).on('submit', '.feedback-form', function(){
+$(document).on('submit', '.feedback-form', function(e){
 	var name = $(this).find('input[name=name]');
 	var email = $(this).find('input[name=email]');
 	var message = $(this).find('textarea[name=message]');
@@ -130,9 +130,13 @@ $(document).on('submit', '.feedback-form', function(){
         data: $(this).serializeArray(),
         success: function(data, textStatus, jqXHR) {
             //data: return data from server
+            alert(data);
+            return false;
         },
         error: function(jqXHR, textStatus, errorThrown) {
             //if fails
+            alert("ERROR: " + textStatus);
+            return false;
         }
     });
     e.preventDefault(); //STOP default action
