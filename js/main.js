@@ -82,3 +82,83 @@ var App = (function(){
 		$('.popup.rec').removeClass('hidden');
 	});
 })();
+
+function validateEmail(x) {
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        return false;
+    } else {
+    	return true;
+    }
+}
+
+$(document).on('submit', '.feedback-form', function(){
+	var name = $(this).find('input[name=name]');
+	var email = $(this).find('input[name=email]');
+	var message = $(this).find('textarea[name=message]');
+	var form_val = true;
+
+	if(name.val() == '') {
+		name.parent().addClass('error');
+		form_val = false;
+	} else {
+		name.parent().removeClass('error');
+	}
+	if(!validateEmail(email.val())) {
+		email.parent().addClass('error');
+		form_val = false;
+	} else {
+		email.parent().removeClass('error');
+	}
+	if(message.val() == '') {
+		message.parent().addClass('error');
+		form_val = false;
+	} else {
+		message.parent().removeClass('error');
+	}
+	if(!form_val) {
+		return false;
+	}
+
+    ///////////////////////////////////////////////////////
+    // AJAX form submit request
+    ///////////////////////////////////////////////////////
+    $.ajax({
+        url : $(this).attr("action"),
+        type: "POST",
+        data: $(this).serializeArray(),
+        success: function(data, textStatus, jqXHR) {
+            //data: return data from server
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            //if fails
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+    ///////////////////////////////////////////////////////
+
+});
+
+if($('.scroll-top').length) {
+	var scroll_allow = true;
+	$(window).on('scroll', function(){
+		if($(window).scrollTop() > $(window).height() / 2) {
+			if(scroll_allow) {
+				$('.scroll-top').addClass('showed');
+			}
+		} else {
+			scroll_allow = false;
+			$('.scroll-top').removeClass('showed');
+			setTimeout(function() {
+				scroll_allow = true;
+			}, 500);
+		}
+	});
+
+	$(document).on('click', '.scroll-top', function(){
+		$('.scroll-top').removeClass('showed');
+		$('html, body').animate({ scrollTop: 0 }, 250);
+	});
+}

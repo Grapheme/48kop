@@ -61,8 +61,7 @@ var FamilyForm = (function(){
 		if($(this).val() == '0') {
 			return;
 		}
-		//selectBox.destroy();
-		//$('.selectBox-dropdown-menu li[rel=' + $(this).val() + ']').css('display', 'none');
+		$('.form-error[data-block=inters]').removeClass('showed');
 		var text = $('.inters-select option[value=' + $(this).val() + ']').text();
 		$('.inters').prepend('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
 		$(this).find('option[value=' + $(this).val() + ']').remove();
@@ -82,7 +81,8 @@ var FamilyForm = (function(){
 
 	$(document).on('click', '.day.click-allow', function(){
 		$('input[name=date]').val($(this).text() + ' ' + $(this).parent().parent().attr('data-month-cyr'));
-		$('.calendar').addClass('closed').attr('data-date', $(this).attr('data-date') + '.' + $(this).parent().parent().attr('data-month') + '.14');
+		$('.calendar').addClass('closed').attr('data-date', $(this).attr('data-date') + '.' + $(this).parent().parent().attr('data-month') + '.2014');
+		$('.form-error[data-block=calendar]').removeClass('showed');
 	});
 
 	$(document).on('click', '.family-btn', function(){
@@ -115,17 +115,30 @@ var FamilyForm = (function(){
 		}
 
 		var family = '{"father": ' + father + ', "mother": ' + mother + ', "children": [' + children + ']}';
-		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + '}';
+		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + ', "city": "' + $('.city-select').val() + '"}';
+		var form_val = true;
 		if(!$('.calendar').attr('data-date')) {
-			alert('Введите дату!');
+			$('.form-error[data-block=calendar]').addClass('showed');
+			form_val = false;
+		} else {
+			$('.form-error[data-block=calendar]').removeClass('showed');
 		}
 		if(!interests[0]) {
-			alert('Введите интересы');
+			$('.form-error[data-block=inters]').addClass('showed');
+			form_val = false;
+		} else {
+			$('.form-error[data-block=inters]').removeClass('showed');
 		}
-		if(!father || !mother) {
-			alert('Нету родителя в составе семьи');
+		if(!father && !mother) {
+			$('.form-error[data-block=family]').addClass('showed');
+			form_val = false;
+		} else {
+			$('.form-error[data-block=family]').removeClass('showed');
 		}
-		alert(json_str);
+		if(form_val) {
+			//alert(json_str);
+            $("input[name=line]").val(json_str).parents("form").submit();
+		}
 		return false;
 	});
 
@@ -174,6 +187,7 @@ var Family = (function(){
 
 			/*============*/
 
+			$('.form-error[data-block=family]').removeClass('showed');
 			$('.family-arrow').addClass('active');
 			$('.family-item.focused').removeClass('focused');
 
