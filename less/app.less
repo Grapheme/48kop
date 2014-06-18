@@ -51,11 +51,37 @@ a:focus {
 }
 
 .scroll-top {
+	.transition;
 	position: fixed;
 	bottom: 10rem / @htmlFontSize;
-	right: 10rem / @htmlFontSize;
-	z-index: 10;
+	right: 25rem / @htmlFontSize;
+	text-align: center;
+	width: 60rem / @htmlFontSize;
+	opacity: 0;
 	cursor: pointer;
+	z-index: 10;
+
+	&.showed {
+		opacity: .5;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.scroll-circle {
+		.box-sizing;
+		display: inline-block;
+		width: 35rem / @htmlFontSize;
+		height: 35rem / @htmlFontSize;
+		border-radius: 35rem / 2 / @htmlFontSize;
+		border: 1px solid #fff;
+		line-height: 33rem / @htmlFontSize;
+	}
+
+	.scroll-text {
+		margin-top: 2rem / @htmlFontSize;
+	}
 }
 
 .top {

@@ -292,11 +292,36 @@ a:focus {
   padding: 0 0.625rem;
 }
 .scroll-top {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   position: fixed;
   bottom: 0.625rem;
-  right: 0.625rem;
-  z-index: 10;
+  right: 1.5625rem;
+  text-align: center;
+  width: 3.75rem;
+  opacity: 0;
   cursor: pointer;
+  z-index: 10;
+}
+.scroll-top.showed {
+  opacity: .5;
+}
+.scroll-top.showed:hover {
+  opacity: 1;
+}
+.scroll-top .scroll-circle {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  border-radius: 1.09375rem;
+  border: 1px solid #fff;
+  line-height: 2.0625rem;
+}
+.scroll-top .scroll-text {
+  margin-top: 0.125rem;
 }
 .top {
   -webkit-box-sizing: border-box;

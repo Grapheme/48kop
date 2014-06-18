@@ -81,7 +81,7 @@ var FamilyForm = (function(){
 
 	$(document).on('click', '.day.click-allow', function(){
 		$('input[name=date]').val($(this).text() + ' ' + $(this).parent().parent().attr('data-month-cyr'));
-		$('.calendar').addClass('closed').attr('data-date', $(this).attr('data-date') + '.' + $(this).parent().parent().attr('data-month') + '.14');
+		$('.calendar').addClass('closed').attr('data-date', $(this).attr('data-date') + '.' + $(this).parent().parent().attr('data-month') + '.2014');
 		$('.form-error[data-block=calendar]').removeClass('showed');
 	});
 
