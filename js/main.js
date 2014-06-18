@@ -80,10 +80,15 @@ var App = (function(){
 	});
 })();
 
-function validateEmail(email) { 
-    var re = /^(([^<>()[]\.,;:s@"]+(.[^<>()[]\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/igm;
-    return re.test(email);
-} 
+function validateEmail(x) {
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        return false;
+    } else {
+    	return true;
+    }
+}
 
 $(document).on('submit', '.feedback-form', function(){
 	var name = $(this).find('input[name=name]');
@@ -97,7 +102,7 @@ $(document).on('submit', '.feedback-form', function(){
 	} else {
 		name.parent().removeClass('error');
 	}
-	if(validateEmail(email.val())) {
+	if(!validateEmail(email.val())) {
 		email.parent().addClass('error');
 		form_val = false;
 	} else {
@@ -112,4 +117,14 @@ $(document).on('submit', '.feedback-form', function(){
 	if(!form_val) {
 		return false;
 	}
+});
+
+$(window).on('scroll', function(){
+	if($(window).scrollTop() > $(window).height() / 2) {
+		console.log('work');
+	}
+});
+
+$(document).on('click', '.scroll-top', function(){
+	$('html, body').animate({ scrollTop: 0 }, 250);
 });
