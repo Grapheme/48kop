@@ -32,7 +32,7 @@
                     <li class="nav-li active">
                         <a href="">О проекте</a>
                     <li class="nav-li">
-                        <a href="">Продукция</a>
+                        <a href="product.html">Продукция</a>
                     <li class="nav-li">
                         <a id="feedback" href="">Обратная связь</a>
                     <li class="nav-li">
@@ -63,7 +63,7 @@
                                         <i class="cal-left"></i>
                                         <i class="cal-right"></i>
                                         <div class="calendar-in">
-                                            <div data-month="june" class="one-month active">
+                                            <div data-month="06" data-month-cyr="июня" class="one-month active">
                                                 <div class="month">
                                                     Июнь 2014
                                                 </div>
@@ -81,7 +81,7 @@
                                                     <i class="day"></i>
                                                     <i class="day"></i>
                                                     <i class="day"></i>
-                                                    <i class="day">1</i>
+                                                    <i class="day click-allow" data-date="1">1</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">2</i>
@@ -89,7 +89,7 @@
                                                     <i class="day">4</i>
                                                     <i class="day">5</i>
                                                     <i class="day">6</i>
-                                                    <i class="day">7-8</i>
+                                                    <i class="day click-allow" data-date="7">7-8</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">9</i>
@@ -97,7 +97,7 @@
                                                     <i class="day">11</i>
                                                     <i class="day">12</i>
                                                     <i class="day">13</i>
-                                                    <i class="day">14-15</i>
+                                                    <i class="day click-allow" data-date="14">14-15</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">16</i>
@@ -105,7 +105,7 @@
                                                     <i class="day">18</i>
                                                     <i class="day">19</i>
                                                     <i class="day">20</i>
-                                                    <i class="day">21-22</i>
+                                                    <i class="day click-allow" data-date="21">21-22</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">23</i>
@@ -113,7 +113,7 @@
                                                     <i class="day">25</i>
                                                     <i class="day">26</i>
                                                     <i class="day">27</i>
-                                                    <i class="day">28-29</i>
+                                                    <i class="day click-allow" data-date="28">28-29</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">30</i>
@@ -124,7 +124,7 @@
                                                     <i class="day">&nbsp;</i>
                                                 </div>
                                             </div>
-                                            <div data-month="july" class="one-month">
+                                            <div data-month="07" data-month-cyr="июля" class="one-month">
                                                 <div class="month">
                                                     Июль 2014
                                                 </div>
@@ -142,7 +142,7 @@
                                                     <i class="day">2</i>
                                                     <i class="day">3</i>
                                                     <i class="day">4</i>
-                                                    <i class="day">5-6</i>
+                                                    <i class="day click-allow" data-date="5">5-6</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">7</i>
@@ -150,7 +150,7 @@
                                                     <i class="day">9</i>
                                                     <i class="day">10</i>
                                                     <i class="day">11</i>
-                                                    <i class="day">12-13</i>
+                                                    <i class="day click-allow" data-date="12">12-13</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">14</i>
@@ -158,7 +158,7 @@
                                                     <i class="day">16</i>
                                                     <i class="day">17</i>
                                                     <i class="day">18</i>
-                                                    <i class="day">19-20</i>
+                                                    <i class="day click-allow" data-date="19">19-20</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">21</i>
@@ -166,7 +166,7 @@
                                                     <i class="day">23</i>
                                                     <i class="day">24</i>
                                                     <i class="day">25</i>
-                                                    <i class="day">26-27</i>
+                                                    <i class="day click-allow" data-date="26">26-27</i>
                                                 </div>
                                                 <div class="days-row">
                                                     <i class="day">28</i>
@@ -219,13 +219,16 @@
                                 <label>Укажите ваши интересы:</label>
                                 <div class="inters">
                                     <select class="inters-select">
-                                        <option selected value="0">Интересы</option>
+                                        <option selected value="0">Укажите интересы</option>
                                         <option value="walk">Прогулки</option>
                                         <option value="travel">Путешествия</option>
                                     </select>
                                 </div>
                             </section>
                         </fieldset>
+                        <div class="family-btn-cont">
+                            <button class="family-btn">Получить рекомендации</button>
+                        </div>
                     </form>
                     <div class="to-bot">
                         <div class="margin-bottom-mid">Выбери свои 48 копеек на выходные!</div>
@@ -324,6 +327,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/vendor/jquery.selectBox.js"></script>
+        <script src="js/index.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

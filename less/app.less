@@ -68,6 +68,11 @@ a:focus {
 				outline: none;
 				border-bottom: 1px dotted #fff;
 			}
+
+			input[name=date] {
+				padding-left: 10rem / @htmlFontSize;
+				color: #fff;
+			}
 		}
 
 		.date-part {
@@ -121,18 +126,23 @@ a:focus {
 		margin-top: 15rem / @htmlFontSize;
 	}
 	.selectBox-dropdown {
+		outline: 0;
 		height: 30rem / @htmlFontSize;
-		line-height: 30rem / @htmlFontSize;
+		line-height: 27rem / @htmlFontSize;
 		border-radius: 15rem / @htmlFontSize;
 		font-family: arial, sans-serif;
 		padding-left: 5rem / @htmlFontSize;
-		padding-right: 20rem / @htmlFontSize;
+		padding-right: 25rem / @htmlFontSize;
 	}
 	.selectBox-label {
-		padding-right: 20rem / @htmlFontSize;
+		font-size: 14rem / @htmlFontSize;
+		padding-right: 25rem / @htmlFontSize;
+		padding-left: 10rem / @htmlFontSize;
 	}
 	.city-select {
 		width: 80%;
+		margin-top: 10rem / @htmlFontSize;
+		font-size: 14rem / @htmlFontSize;
 	}
 
 	.family-item {
@@ -476,6 +486,7 @@ a:focus {
 	line-height: 30rem / @htmlFontSize;
 	background: rgba(255, 255, 255, 0.5);
 	margin: 0 5rem / @htmlFontSize 10rem / @htmlFontSize 0;
+	font-size: 14rem / @htmlFontSize;
 
 	.int-cross {
 		position: absolute;
@@ -484,5 +495,22 @@ a:focus {
 		text-align: center;
 		font-size: 12rem / @htmlFontSize;
 		cursor: pointer;
+	}
+}
+
+.family-btn-cont {
+	text-align: center;
+	margin-top: 35rem / @htmlFontSize;
+	margin-bottom: 25rem / @htmlFontSize;
+
+	.family-btn {
+		color: #126cb6;
+		font-size: 18rem / @htmlFontSize;
+		border-radius: 35rem / @htmlFontSize;
+		height: 45rem / @htmlFontSize;
+		line-height: 45rem / @htmlFontSize;
+		padding: 0 25rem / @htmlFontSize;
+		background: #fff;
+		border: 0 none;
 	}
 }
