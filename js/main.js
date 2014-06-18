@@ -10,7 +10,7 @@ var App = (function(){
 	$('.overlay.no-fix').height( $(document).height() );
 
 	$(window).resize( function(){
-		alignBg();
+		if($(window).width() > 1044) { $top.height( $(window).width() / 1.834 ); }
 	});
 
 	$(document).on('click', '#login', function(e){
@@ -23,6 +23,30 @@ var App = (function(){
 			scrollTop: $(".mid-cont").offset().top
 		}, 800);
 	});
+
+	/* Recomendations anchors */
+
+	$(document).on('click', '.an_places', function(e){
+		$('html,body').animate({
+			scrollTop: $(".places-ul").offset().top
+		}, 400);
+	});
+	$(document).on('click', '.an_events', function(e){
+		$('html,body').animate({
+			scrollTop: $(".events-ul").offset().top
+		}, 400);
+	});
+	$(document).on('click', '.an_advices', function(e){
+		$('html,body').animate({
+			scrollTop: $(".advices-ul").offset().top
+		}, 400);
+	});
+	$(document).on('click', '.an_where2b', function(e){
+		$('html,body').animate({
+			scrollTop: $(".wtb-ul").offset().top
+		}, 400);
+	});
+
 	$(document).on('click', '#feedback', function(e){
 		e.preventDefault();
 		$('.overlay').removeClass('hidden');
