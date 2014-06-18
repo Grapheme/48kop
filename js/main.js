@@ -18,6 +18,17 @@ var App = (function(){
 		$('.overlay').removeClass('hidden');
 		$('[data-item="auth"]').removeClass('hidden');
 	});
+	$(document).on('click', '.feedback-form button', function(e){
+		e.preventDefault();
+		$(this).parent()
+			   .parent()
+			   .hide()
+			   .parent()
+			   .parent()
+			   .find('.popup-desc').html('Ваше сообщение успешно отправлено.<br>Спасибо за внимание к нашему проекту.')
+			   .prev()
+			   .css('padding', '10% 0 1%');
+	});
 	$(document).on('click', '.to-bot .button', function(e){
 		$('html,body').animate({
 			scrollTop: $(".mid-cont").offset().top
@@ -46,6 +57,7 @@ var App = (function(){
 			scrollTop: $("#where2b_anch").offset().top - 29
 		}, 400);
 	});
+
 	$(document).on('click', '.i-will', function(e){
 		$(this).toggleClass('active');
 	});
