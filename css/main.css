@@ -261,6 +261,11 @@ a:active,
 a:focus {
   outline: none;
 }
+.cal-img {
+  width: 1.4375rem;
+  height: 1.488rem;
+  cursor: pointer;
+}
 .section-cont {
   position: relative;
   max-width: 71.1875rem;
@@ -638,7 +643,7 @@ a:focus {
   background: #FFB35F;
 }
 .mid .mid-cont {
-  margin: -2rem 0 2.3rem;
+  margin: -2rem 0 0 2.3rem;
 }
 .mid .mid-cont .show-all-tastes {
   -webkit-transition: all 0.5s ease;
@@ -793,14 +798,20 @@ a:focus {
   margin-bottom: 1.5625rem;
 }
 .family-btn-cont .family-btn {
-  color: #126cb6;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: #fff;
   font-size: 1.125rem;
   border-radius: 2.1875rem;
   height: 2.8125rem;
   line-height: 2.8125rem;
   padding: 0 1.5625rem;
-  background: #fff;
+  background: #126cb6;
   border: 0 none;
+}
+.family-btn-cont .family-btn:hover {
+  color: #126cb6;
+  background: #fff;
 }
 .footer {
   -webkit-box-sizing: border-box;

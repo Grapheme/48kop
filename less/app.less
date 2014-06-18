@@ -14,6 +14,12 @@ a:focus {
 	outline: none;
 }
 
+.cal-img {
+	width: 23rem / @htmlFontSize;
+	height: 1.488rem;
+	cursor: pointer;
+}
+
 .section-cont {
 	position: relative;
 	max-width: 1139rem / @htmlFontSize;
@@ -352,7 +358,7 @@ a:focus {
 	background: #FFB35F;
 
 	.mid-cont {
-		margin: -2rem 0 2.3rem;
+		margin: -2rem 0 0 2.3rem;
 
 		.show-all-tastes {
 			.transition;
@@ -532,13 +538,19 @@ a:focus {
 	margin-bottom: 25rem / @htmlFontSize;
 
 	.family-btn {
-		color: #126cb6;
+		.transition;
+		color: #fff;
 		font-size: 18rem / @htmlFontSize;
 		border-radius: 35rem / @htmlFontSize;
 		height: 45rem / @htmlFontSize;
 		line-height: 45rem / @htmlFontSize;
 		padding: 0 25rem / @htmlFontSize;
-		background: #fff;
+		background: #126cb6;
 		border: 0 none;
+
+		&:hover {
+			color: #126cb6;
+			background: #fff;
+		}
 	}
 }
