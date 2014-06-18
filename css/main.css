@@ -291,6 +291,13 @@ a:focus {
   background: #ef3c5f;
   padding: 0 0.625rem;
 }
+.scroll-top {
+  position: fixed;
+  bottom: 0.625rem;
+  right: 0.625rem;
+  z-index: 10;
+  cursor: pointer;
+}
 .top {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

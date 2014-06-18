@@ -115,7 +115,7 @@ var FamilyForm = (function(){
 		}
 
 		var family = '{"father": ' + father + ', "mother": ' + mother + ', "children": [' + children + ']}';
-		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + '}';
+		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + ', "city": "' + $('.city-select').val() + '"}';
 		var form_val = true;
 		if(!$('.calendar').attr('data-date')) {
 			$('.form-error[data-block=calendar]').addClass('showed');
