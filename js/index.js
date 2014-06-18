@@ -136,7 +136,8 @@ var FamilyForm = (function(){
 			$('.form-error[data-block=family]').removeClass('showed');
 		}
 		if(form_val) {
-			alert(json_str);
+			//alert(json_str);
+            $("input[name=line]").val(json_str).parents("form").submit();
 		}
 		return false;
 	});

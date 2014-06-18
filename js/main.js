@@ -117,6 +117,25 @@ $(document).on('submit', '.feedback-form', function(){
 	if(!form_val) {
 		return false;
 	}
+
+    ///////////////////////////////////////////////////////
+    // AJAX form submit request
+    ///////////////////////////////////////////////////////
+    $.ajax({
+        url : $(this).attr("action"),
+        type: "POST",
+        data: $(this).serializeArray(),
+        success: function(data, textStatus, jqXHR) {
+            //data: return data from server
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            //if fails
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+    ///////////////////////////////////////////////////////
+
 });
 
 if($('.scroll-top').length) {
