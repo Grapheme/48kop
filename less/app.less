@@ -42,9 +42,14 @@ a:focus {
 		.form-error {
 			text-align: center;
 			margin-top: 10rem / @htmlFontSize;
+			display: none;
 
 			&.input-error {
 				text-align: left;
+			}
+
+			&.showed {
+				display: block;
 			}
 
 			span {
@@ -56,6 +61,10 @@ a:focus {
 				background: rgb(239, 60, 95);
 				padding: 0 10rem / @htmlFontSize;
 			}
+		}
+
+		.margin-t40 {
+			margin-top: 40rem / @htmlFontSize;
 		}
 
 		.form-head {

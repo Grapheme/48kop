@@ -51,7 +51,7 @@
                                 Заполни анкету и получи рекомендации на выходные!
                             </div>
                         </div>
-                        <div class="form-error">
+                        <div class="form-error showed">
                             <span>К сожалению при отправке формы произошел сбой. Попробуйте позже</span>
                         </div>
                         <fieldset>
@@ -62,7 +62,7 @@
                                         <input type="text" name="date">
                                         <span class="cal-icon icon icon-calendar"></span>
                                     </label>
-                                    <div class="form-error input-error">
+                                    <div class="form-error input-error" data-block="calendar">
                                         <span>Вы не указали дату</span>
                                     </div>
                                     <div class="calendar closed">
@@ -220,7 +220,7 @@
                                         <div class="family-after"></div>
                                     </div>
                                 </div>
-                                <div class="form-error input-error">
+                                <div class="form-error input-error margin-t40" data-block="family">
                                     <span>Вы не указали состав семьи</span>
                                 </div>
                             </section><!--
@@ -233,7 +233,7 @@
                                         <option value="travel">Путешествия</option>
                                     </select>
                                 </div>
-                                <div class="form-error input-error">
+                                <div class="form-error input-error" data-block="inters">
                                     <span>Вы не указали ни одного интереса</span>
                                 </div>
                             </section>
@@ -316,17 +316,18 @@
                     <fieldset>
                         <section>
                             <label>Представьтесь</label><!--
-                         --><input type="text" value="Коля Иванов">
+                         --><input type="text" value="Коля Иванов" name="name">
+                            <div class="inp-error"><span>Не заполнено обязательное поле</span></div>
                         </section>
                         <section>
                             <label>Ваш email</label><!--
-                         --><input type="text" value="kolya@ivanov.com">
+                         --><input type="text" value="kolya@ivanov.com" name="email">
+                            <div class="inp-error"><span>Не заполнено обязательное поле</span></div>
                         </section>
                         <section class="with-textarea">
                             <label>Сообщение</label><!--
-                         --><textarea>
-                                
-                            </textarea>
+                         --><textarea name="message"></textarea>
+                            <div class="inp-error"><span>Не заполнено обязательное поле</span></div>
                         </section>
                         <footer>
                             <button type="submit">Отправить</button>

@@ -36,7 +36,6 @@
 .feedback {
 	top: 5%;
 	width: 744rem / @htmlFontSize;
-	height: 553rem / @htmlFontSize;
 	margin: 0 0 0 -744rem / @htmlFontSize / 2;
 
 	h3 {	
@@ -290,6 +289,32 @@
 			label {
 				margin: .5rem 0 0;
 			}
+		}
+	}
+
+	.inp-error {
+		margin-left: 12rem;
+		display: none;
+
+		span {
+			display: inline-block;
+			font-family: sans-serif;
+			font-size: 14rem / @htmlFontSize;
+			height: 25rem / @htmlFontSize;
+			line-height: 25rem / @htmlFontSize;
+			background: rgb(239, 60, 95);
+			padding: 0 10rem / @htmlFontSize;
+		}
+	}
+
+	.error {
+
+		input {
+			border-color: rgb(239, 60, 95);
+		}
+
+		.inp-error {
+			display: block;
 		}
 	}
 

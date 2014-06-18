@@ -79,3 +79,37 @@ var App = (function(){
 		$('.popup.rec').removeClass('hidden');
 	});
 })();
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[]\.,;:s@"]+(.[^<>()[]\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/igm;
+    return re.test(email);
+} 
+
+$(document).on('submit', '.feedback-form', function(){
+	var name = $(this).find('input[name=name]');
+	var email = $(this).find('input[name=email]');
+	var message = $(this).find('textarea[name=message]');
+	var form_val = true;
+
+	if(name.val() == '') {
+		name.parent().addClass('error');
+		form_val = false;
+	} else {
+		name.parent().removeClass('error');
+	}
+	if(validateEmail(email.val())) {
+		email.parent().addClass('error');
+		form_val = false;
+	} else {
+		email.parent().removeClass('error');
+	}
+	if(message.val() == '') {
+		message.parent().addClass('error');
+		form_val = false;
+	} else {
+		message.parent().removeClass('error');
+	}
+	if(!form_val) {
+		return false;
+	}
+});
