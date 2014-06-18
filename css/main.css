@@ -278,6 +278,22 @@ html {
   border-radius: 16px;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4) inset, 0 2px 2px -1px rgba(0, 0, 0, 0.4);
 }
+.top .family-form .form-error {
+  text-align: center;
+  margin-top: 0.625rem;
+}
+.top .family-form .form-error.input-error {
+  text-align: left;
+}
+.top .family-form .form-error span {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  background: #ef3c5f;
+  padding: 0 0.625rem;
+}
 .top .family-form .form-head {
   text-align: center;
 }

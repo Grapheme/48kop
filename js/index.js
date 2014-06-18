@@ -116,6 +116,15 @@ var FamilyForm = (function(){
 
 		var family = '{"father": ' + father + ', "mother": ' + mother + ', "children": [' + children + ']}';
 		var json_str = '{"date": "' + $('.calendar').attr('data-date') + '", "interests": [' + interests + '], "family": ' + family + '}';
+		if(!$('.calendar').attr('data-date')) {
+			alert('Введите дату!');
+		}
+		if(!interests[0]) {
+			alert('Введите интересы');
+		}
+		if(!father || !mother) {
+			alert('Нету родителя в составе семьи');
+		}
 		alert(json_str);
 		return false;
 	});
