@@ -65,13 +65,15 @@ var App = (function(){
 	$(document).on('click', '.i-will', function(e){
 		$(this).toggleClass('active');
 	});
-
+	$(document).on('click', '.popup', function(e){
+		e.stopPropagation();
+	});
 	$(document).on('click', '#feedback', function(e){
 		e.preventDefault();
 		$('.overlay').removeClass('hidden');
 		$('[data-item="feedback"]').removeClass('hidden');
 	});
-	$(document).on('click', '.popup-close', function(e){
+	$(document).on('click', '.popup-close, .overlay', function(e){
 		e.preventDefault();
 		$('.overlay').addClass('hidden');
 		$('.popup').addClass('hidden');
