@@ -63,14 +63,14 @@
                         <li class="places-li">
                             <div class="places-head" style="background-image: url(img/places/01.jpg);"></div>
                             <div class="places-body">
-                                <a href="#" class="places-link">Парк Горького</a>
+                                <a href="#"  data-place="0" class="places-link">Парк Горького</a>
                                 <div class="places-name">Парк</div>
                                 <div class="places-street"><span class="icon icon-location"></span>ул. Большая Садовая</div>
                             </div>
                         <li class="places-li">
                             <div class="places-head" style="background-image: url(img/places/01.jpg);"></div>
                             <div class="places-body">
-                                <a href="#" class="places-link">Парк Горького</a>
+                                <a href="#" data-place="1" class="places-link">Парк Горького</a>
                                 <div class="places-name">Парк</div>
                                 <div class="places-street"><span class="icon icon-location"></span>ул. Большая Садовая</div>
                             </div>
@@ -335,19 +335,53 @@
                     </fieldset>
                 </form>
             </section>
-            <section class="popup rec hidden" data-item="rec">
+            <section id="rec" class="popup rec hidden" data-item="rec">
+                
+            </section>
+            <section class="popup rec advice" data-item="advice">
                 <div class="rec-cont">
                     <header>
                         <div class="popup-close icon icon-cancel"></div>
                         <h3>Праздник «Цирк в саду»</h3>
+                    </header>
+                    <div class="column left">
+                        <p>Сад «Эрмитаж» разделится на зоны, каждая будет иметь свой цвет. В белой зоне разместятся ловкие эквилибристы, которые покажут свое экстремальное, но прекрасное искусство. В красной зоне можно увидеть акробатов и чудо, на которое способно человеческое тело. В желтой зоне поселятся жонглеры, в синей — гимнасты, а в черной — фокусники. Все выступления проходят с веселым музыкальным сопровождением. Состоятся представления маленьких театров: «13 рук», Microscope и «Экспромт».</p>
+                        <ul class="likes-ul">
+                            <li class="likes-li">
+                                <img src="img/social/01.jpg" alt="">
+                            <li class="likes-li">
+                                <img src="img/social/02.jpg" alt="">
+                            <li class="likes-li">
+                                <img src="img/social/03.jpg" alt="">
+                            <li class="likes-li">
+                                <img src="img/social/04.jpg" alt="">
+                        </ul>
+                        <div>
+                            <div class="send-email-cont">
+                                <a class="send-email" id="send-email" href="#">Отправить по email</a>
+                                <form class="send-email-form">
+                                    <input type="text"><!--
+                                 --><button id="sendEmailSubmit" type="submit">Ок</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p>Сад «Эрмитаж» разделится на зоны, каждая будет иметь свой цвет. В белой зоне разместятся ловкие эквилибристы, которые покажут свое экстремальное, но прекрасное искусство. В красной зоне можно увидеть акробатов и чудо, на которое способно человеческое тело. В желтой зоне поселятся жонглеры, в синей — гимнасты, а в черной — фокусники. Все выступления проходят с веселым музыкальным сопровождением. Состоятся представления маленьких театров: «13 рук», Microscope и «Экспромт».</p>
+                    </div>
+                </div>
+            </section>
+            <script id="rec-template" type="text/x-handlebars-template">
+                <div class="rec-cont">
+                    <header>
+                        <div class="popup-close icon icon-cancel"></div>
+                        <h3>{{name}}</h3>
                         <div class="popup-desc">
-                            В День защиты детей «Эрмитаж» превратится в большую цирковую арену.<br>
-                            Эквилибристы, жонглеры, фокусники и гимнасты будут показывать свои умения и<br>
-                            поздравлять юных гостей парка.
+                            {{desc}}
                         </div>
                     </header>
                     <div class="column left">
-                        <div class="pict" style="background-image:url(img/events/01.jpg)"></div>
+                        <div class="pict" style="background-image:url({{photo}})"></div>
                         <ul class="likes-ul">
                             <li class="likes-li">
                                 <img src="img/social/01.jpg" alt="">
@@ -403,45 +437,62 @@
                 <footer>
                     Еще лучше дополняет это мероприятие <a href="#">шоколадный брикет 48 копеек</a>
                 </footer>
-            </section>
-            <section class="popup rec advice" data-item="advice">
-                <div class="rec-cont">
-                    <header>
-                        <div class="popup-close icon icon-cancel"></div>
-                        <h3>Праздник «Цирк в саду»</h3>
-                    </header>
-                    <div class="column left">
-                        <p>Сад «Эрмитаж» разделится на зоны, каждая будет иметь свой цвет. В белой зоне разместятся ловкие эквилибристы, которые покажут свое экстремальное, но прекрасное искусство. В красной зоне можно увидеть акробатов и чудо, на которое способно человеческое тело. В желтой зоне поселятся жонглеры, в синей — гимнасты, а в черной — фокусники. Все выступления проходят с веселым музыкальным сопровождением. Состоятся представления маленьких театров: «13 рук», Microscope и «Экспромт».</p>
-                        <ul class="likes-ul">
-                            <li class="likes-li">
-                                <img src="img/social/01.jpg" alt="">
-                            <li class="likes-li">
-                                <img src="img/social/02.jpg" alt="">
-                            <li class="likes-li">
-                                <img src="img/social/03.jpg" alt="">
-                            <li class="likes-li">
-                                <img src="img/social/04.jpg" alt="">
-                        </ul>
-                        <div>
-                            <div class="send-email-cont">
-                                <a class="send-email" id="send-email" href="#">Отправить по email</a>
-                                <form class="send-email-form">
-                                    <input type="text"><!--
-                                 --><button id="sendEmailSubmit" type="submit">Ок</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <p>Сад «Эрмитаж» разделится на зоны, каждая будет иметь свой цвет. В белой зоне разместятся ловкие эквилибристы, которые покажут свое экстремальное, но прекрасное искусство. В красной зоне можно увидеть акробатов и чудо, на которое способно человеческое тело. В желтой зоне поселятся жонглеры, в синей — гимнасты, а в черной — фокусники. Все выступления проходят с веселым музыкальным сопровождением. Состоятся представления маленьких театров: «13 рук», Microscope и «Экспромт».</p>
-                    </div>
-                </div>
-            </section>
+            </script>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script>        
+        <script src="js/vendor/handlebars-v1.3.0.js"></script>
+        <script>
+        var popup__data = {
+                "places":[
+                    {
+                        "id":8,
+                        "name":"Красная площадь",
+                        "desc":"111222333",
+                        "photo":null
+                    },
+                    {
+                        "id":8,
+                        "name":"Синяя площадь",
+                        "desc":"111222333",
+                        "photo":'http://cs620627.vk.me/v620627787/f02c/Vf9hD5mVmzI.jpg'
+                    }
+                ],
+                "actions":[
+                    {
+                        "id":1,
+                        "name":"День Города в Москве",
+                        "desc":"<p> Описание с фото и прочей информацией, вроде времени и места проведения. </p>",
+                        "photo":null,
+                        "date":"15 мая",
+                        "time":"",
+                        "where":"",
+                        "price":0,
+                        "web":""
+                    }
+                ],
+                "advices":[
+                    {
+                        "id":1,
+                        "name":"День Города в Москве",
+                        "desc":"<p> Описание с фото и прочей информацией, вроде времени и места проведения. </p>"
+                    }
+                ]
+            };
+        $(document).on('click', '.places-link', function(e){
+            e.preventDefault();
+            var num = $(this).data('place');
+            var source   = $("#rec-template").html();
+            var template = Handlebars.compile(source);
+            var context = popup__data.places[num];
+            var html = template(context);
+            $('#rec').html(html);
+            $('.overlay').removeClass('hidden');
+            $('#rec').removeClass('hidden');
+        });        
+        </script>
     </body>
 </html>
