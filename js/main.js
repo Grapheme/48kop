@@ -91,11 +91,6 @@ var App = (function(){
 		e.preventDefault();
 		$(this).parent().html('<span class="success">Ваша рекомендация успешно<br>отправлена вашему другу</span>');
 	});
-	$(document).on('click', '.events-link, .advices-head > a', function(e){
-		e.preventDefault();
-		$('.overlay').removeClass('hidden');
-		$('.popup.rec').removeClass('hidden');
-	});
 })();
 
 function validateEmail(x) {
