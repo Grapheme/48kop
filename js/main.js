@@ -1,17 +1,17 @@
 var App = (function(){
 	var $top = $('.top');
 
-	var alignBg = function(){
-		$top.height( $(window).width() / 1.634 );
-	};
+	// var alignBg = function(){
+	// 	$top.height( $(window).width() / 1.634 );
+	// };
 
-	alignBg();
+	// alignBg();
 
 	$('.overlay.no-fix').height( $(document).height() );
 
-	$(window).resize( function(){
-		if($(window).width() > 1044) { $top.height( $(window).width() / 1.834 ); }
-	});
+	// $(window).resize( function(){
+	// 	if($(window).width() > 1044) { $top.height( $(window).width() / 1.834 ); }
+	// });
 
 	$(document).on('click', '#login', function(e){
 		e.preventDefault();

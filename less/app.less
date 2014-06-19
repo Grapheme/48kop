@@ -87,11 +87,11 @@ a:focus {
 .top {
 	.box-sizing;
 	width: 100%;
-	height: 700rem / @htmlFontSize;
+	height: 740rem / @htmlFontSize;
 	margin: -94rem / @htmlFontSize auto 0;
 	padding: 94rem / @htmlFontSize 0 0;
 
-	background: url(../img/top-bg.png) no-repeat center 0 e('/') 100% 100% #FFB35F;
+	background: url(../img/top-bg.png) no-repeat center center e('/') cover #FFB35F;
 
 	.family-form {
 		.box-sizing;
@@ -387,12 +387,23 @@ a:focus {
 	position: relative;
 	width: 100%;
 	height: 12rem;
-	margin: 0 auto;
-	padding: 1rem 0 0 5.1rem;
+	margin: -5rem / @htmlFontSize auto 0;
+	padding: 1rem 0 0;
 	background: #FFB35F;
 
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		width: 100%;
+		height: 160rem / @htmlFontSize;
+		background: url(../img/top-angle.png) no-repeat 0 0 e('/') 100% 100%;
+	}
+
 	.mid-cont {
-		margin: -2rem 0 0 2.3rem;
+		width: 61.25rem;
+		margin: -2rem auto 0;
 
 		.show-all-tastes {
 			.transition;
