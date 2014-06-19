@@ -1,17 +1,9 @@
 var App = (function(){
 	var $top = $('.top');
-
-	// var alignBg = function(){
-	// 	$top.height( $(window).width() / 1.634 );
-	// };
-
-	// alignBg();
+	var $sendEmailForm = $('.send-email-form');
+	var $sendEmailCont = $sendEmailForm.html();
 
 	$('.overlay.no-fix').height( $(document).height() );
-
-	// $(window).resize( function(){
-	// 	if($(window).width() > 1044) { $top.height( $(window).width() / 1.834 ); }
-	// });
 
 	$(document).on('click', '#login', function(e){
 		e.preventDefault();
@@ -33,6 +25,16 @@ var App = (function(){
 		$('html,body').animate({
 			scrollTop: $(".mid-cont").offset().top
 		}, 800);
+	});
+
+	$(document).click( function(){
+		console.log('click');
+		if($sendEmailForm.is(':visible')) {
+			$sendEmailForm.hide().html($sendEmailCont);
+		}
+	});
+	$(document).on('click', '.send-email-form, #send-email', function(e){
+		e.stopPropagation();
 	});
 
 	/* Recomendations anchors */
