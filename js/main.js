@@ -150,6 +150,8 @@ var App = (function(){
 		$('.popup').addClass('hidden').removeAttr('style');
 		$('.outer-wrapper').removeAttr('style');
 		setTimeout(function(){$(document).scrollTop($winOffset);}, 100);
+		$('.feedback').removeAttr('style');
+		$('.feedback-form > fieldset').show();
 	});
 	$(document).on('click', '.send-email', function(e){
 		e.preventDefault();
