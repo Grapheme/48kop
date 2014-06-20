@@ -80,7 +80,7 @@ var App = (function(){
 	});
 
     $(document).on('click', '.places-link', function(e){
-    	$winOffset = $(this).offset().top;
+    	$winOffset = $(this).parent().parent().offset().top;;
     	console.log($winOffset);
         e.preventDefault();
         //Привязывается к id, который указан в data-place ссылки
@@ -99,7 +99,7 @@ var App = (function(){
         }, 4);
     });
     $(document).on('click', '.events-link', function(e){
-    	$winOffset = $(this).offset().top;
+    	$winOffset = $(this).parent().parent().offset().top;
     	console.log($winOffset);
         e.preventDefault();
         var num = $(this).data('place');
@@ -116,7 +116,7 @@ var App = (function(){
         }, 4);
     });
     $(document).on('click', '.advices-head > a', function(e){
-    	$winOffset = $(this).offset().top;
+    	$winOffset = $(this).parent().parent().offset().top;
     	console.log($winOffset);
         e.preventDefault();
         var num = $(this).data('place');
@@ -145,11 +145,11 @@ var App = (function(){
 		alignPopup($('[data-item="feedback"]'));
 	});
 	$(document).on('click', '.popup-close, .overlay', function(e){
-		$(document).scrollTop($winOffset);
 		e.preventDefault();
-		$('.overlay').addClass('hidden').removeClass('.not-fixed');
+		$('.overlay').addClass('hidden').removeClass('not-fixed');
 		$('.popup').addClass('hidden').removeAttr('style');
 		$('.outer-wrapper').removeAttr('style');
+		setTimeout(function(){$(document).scrollTop($winOffset);}, 100);
 	});
 	$(document).on('click', '.send-email', function(e){
 		e.preventDefault();
