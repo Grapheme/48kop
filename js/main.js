@@ -2,14 +2,8 @@ var App = (function(){
 	var $top = $('.top');
 	var $sendEmailForm = $('.send-email-form');
 	var $sendEmailCont = $sendEmailForm.html();
+	var $winOffset = $('html').offset().top;
 
-	$('.overlay.no-fix').height( $(document).height() );
-
-	$(document).on('click', '#login', function(e){
-		e.preventDefault();
-		$('.overlay').removeClass('hidden');
-		$('[data-item="auth"]').removeClass('hidden');
-	});
 	$(document).on('click', '.feedback-form button', function(e){
 		e.preventDefault();
 		$(this).parent()
@@ -65,18 +59,97 @@ var App = (function(){
 	$(document).on('click', '.i-will', function(e){
 		$(this).toggleClass('active');
 	});
+
+	/* popups */
+	function alignPopup(popup) {
+		var $overlay = $('.overlay');
+		var $wrapper = $('.outer-wrapper');
+
+		if( popup.height() > $(window).height() + 60 ){
+			$overlay.addClass('not-fixed').height(popup.height() + 60);
+			$wrapper.height(popup.height() + 60).scrollTop(0).css({ 'overflow': 'hidden'});
+			popup.css({ 'top': '30px'});
+		}
+		else {
+			popup.css({ 'top': ( $overlay.height() - popup.height() ) / 2 });
+		}
+	}
+
 	$(document).on('click', '.popup', function(e){
 		e.stopPropagation();
+	});
+
+    $(document).on('click', '.places-link', function(e){
+    	$winOffset = $(this).offset().top;
+    	console.log($winOffset);
+        e.preventDefault();
+        //Привязывается к id, который указан в data-place ссылки
+        var num = $(this).data('place');
+        //Задаем нужный шаблон
+        var source  = $("#rec-template").html();
+        var template = Handlebars.compile(source);
+        //Выбираем нужный ключ из объекта мероприятий, мест и советов
+        var context = popup__data.places[num];
+        var html = template(context);
+        $('#rec').html(html);
+        $('.overlay').removeClass('hidden');
+		$('#rec').removeClass('hidden');
+        setTimeout( function(){
+			alignPopup( $('#rec') );
+        }, 4);
+    });
+    $(document).on('click', '.events-link', function(e){
+    	$winOffset = $(this).offset().top;
+    	console.log($winOffset);
+        e.preventDefault();
+        var num = $(this).data('place');
+        var source  = $("#event-template").html();
+        var template = Handlebars.compile(source);
+        var context = popup__data.events[num];
+        var html = template(context);
+        $('#rec').html(html);
+        alignPopup($('#rec'));
+        $('.overlay').removeClass('hidden');
+        $('#rec').removeClass('hidden');
+        setTimeout( function(){
+			alignPopup( $('#rec') );
+        }, 4);
+    });
+    $(document).on('click', '.advices-head > a', function(e){
+    	$winOffset = $(this).offset().top;
+    	console.log($winOffset);
+        e.preventDefault();
+        var num = $(this).data('place');
+        var source  = $("#advice-template").html();
+        var template = Handlebars.compile(source);
+        var context = popup__data.advices[num];
+        var html = template(context);
+        alignPopup($('#advice'));
+        $('#advice').html(html);
+        $('.overlay').removeClass('hidden');
+        $('#advice').removeClass('hidden');
+        setTimeout( function(){
+			alignPopup( $('#advice') );
+        }, 4);
+    });
+	$(document).on('click', '#login', function(e){
+		e.preventDefault();
+		$('.overlay').removeClass('hidden');
+		$('[data-item="auth"]').removeClass('hidden');
+		alignPopup($('[data-item="auth"]'));
 	});
 	$(document).on('click', '#feedback', function(e){
 		e.preventDefault();
 		$('.overlay').removeClass('hidden');
 		$('[data-item="feedback"]').removeClass('hidden');
+		alignPopup($('[data-item="feedback"]'));
 	});
 	$(document).on('click', '.popup-close, .overlay', function(e){
+		$(document).scrollTop($winOffset);
 		e.preventDefault();
-		$('.overlay').addClass('hidden');
-		$('.popup').addClass('hidden');
+		$('.overlay').addClass('hidden').removeClass('.not-fixed');
+		$('.popup').addClass('hidden').removeAttr('style');
+		$('.outer-wrapper').removeAttr('style');
 	});
 	$(document).on('click', '.send-email', function(e){
 		e.preventDefault();
