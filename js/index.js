@@ -65,9 +65,9 @@ var FamilyForm = (function(){
 			return;
 		}
 		$('.form-error[data-block=inters]').removeClass('showed');
-		var text = $('.inters-select option[value=' + $(this).val() + ']').text();
+		var text = $('.inters-select option[value="' + $(this).val() + '"]').text();
 		$('.inters-cont').append('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
-		$(this).find('option[value=' + $(this).val() + ']').remove();
+		$(this).find('option[value="' + $(this).val() + '"]').remove();
 		selectBox.destroy();
 		selectBox.init();
 		if($('.inters-clicked').length == 5) {
