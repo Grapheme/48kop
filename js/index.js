@@ -41,14 +41,19 @@ var FamilyForm = (function(){
 		$(this).parent().find('.person').fadeOut(100);
 	});
 
+	var step = 0;
 	$(document).on('click', '.cal-left', function(){
-		$('.calendar-in').removeClass('step');
+		if(step == 0) return;
+		step--;
+		$('.calendar-in').attr('style', '-webkit-transform: translateX(-' + step * 384 + 'px); transform: translateX(' + step * 384 + 'px);');
 		$('.one-month[data-month=07]').removeClass('active');
 		$('.one-month[data-month=06]').addClass('active');
 	});
 
 	$(document).on('click', '.cal-right', function(){
-		$('.calendar-in').addClass('step');
+		if(step == $('.one-month').length - 1) return;
+		step++;
+		$('.calendar-in').attr('style', '-webkit-transform: translateX(-' + step * 384 + 'px); transform: translateX(' + step * 384 + 'px);');
 		$('.one-month[data-month=07]').addClass('active');
 		$('.one-month[data-month=06]').removeClass('active');
 	});
