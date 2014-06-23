@@ -196,6 +196,9 @@
                 $regFilter.filter("[data-cat='" + $activeCat + "']").addClass('active');
             } 
 
+            var hash = window.location.hash;
+            if(hash) { var $itemHash = $(hash).index(); }
+
             var $recFilter = $('.rec-filter-li');
             var $group = $('.fotorama .slide');
             var $groupArr = {};
@@ -209,6 +212,11 @@
             })();
 
             var $fotoramaApi = fotoramaInit();
+
+            if(hash) {
+                $fotoramaApi.show($itemHash);
+                showFilter();
+            }
 
             $('.fotorama').on(
                 'fotorama:show fotorama:showend',
