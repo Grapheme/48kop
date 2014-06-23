@@ -52,53 +52,47 @@
                         <li class="rec-filter-li" data-cat="3">
                             <a href="#">Стаканчик, трубочка, эскимо</a>
                     </ul>
-                    <div class="fotorama" data-auto="false" data-cat="0">
-                        <div class="slide" id="01">
+                    <div class="fotorama" data-auto="false">
+                        <div class="slide" id="01" data-cat="0">
                             <img src="img/products/01.png">
                             <h2>Шоколадное с шоколадным соусом</h2>
                             <div class='product-desc'>Для истинных любителей шоколада!</div>
                         </div>
-                        <div class="slide" id="02">
-                            <img src="img/products/01.png">
-                            <h2>Шоколадное с шоколадным соусом</h2>
-                            <div class='product-desc'>Для истинных любителей шоколада!</div>
-                        </div>                   
-                    </div>
-                    <div class="fotorama hidden" data-auto="false" data-cat="1">
-                        <div class="slide" id="11">
+                        <div class="slide" id="02" data-cat="0">
                             <img src="img/products/01.png">
                             <h2>Шоколадное с шоколадным соусом</h2>
                             <div class='product-desc'>Для истинных любителей шоколада!</div>
                         </div>
-                        <div class="slide" id="12">
-                            <img src="img/products/01.png">
-                            <h2>Шоколадное с шоколадным соусом</h2>
-                            <div class='product-desc'>Для истинных любителей шоколада!</div>
-                        </div>                   
-                    </div>
-                    <div class="fotorama hidden" data-auto="false" data-cat="2">
-                        <div class="slide" id="21">
+                        <div class="slide" id="11" data-cat="1">
                             <img src="img/products/01.png">
                             <h2>Шоколадное с шоколадным соусом</h2>
                             <div class='product-desc'>Для истинных любителей шоколада!</div>
                         </div>
-                        <div class="slide" id="22">
-                            <img src="img/products/01.png">
-                            <h2>Шоколадное с шоколадным соусом</h2>
-                            <div class='product-desc'>Для истинных любителей шоколада!</div>
-                        </div>                   
-                    </div>
-                    <div class="fotorama hidden" data-auto="false" data-cat="3">
-                        <div class="slide" id="31">
+                        <div class="slide" id="12" data-cat="1">
                             <img src="img/products/01.png">
                             <h2>Шоколадное с шоколадным соусом</h2>
                             <div class='product-desc'>Для истинных любителей шоколада!</div>
                         </div>
-                        <div class="slide" id="32">
+                        <div class="slide" id="21" data-cat="2">
                             <img src="img/products/01.png">
                             <h2>Шоколадное с шоколадным соусом</h2>
                             <div class='product-desc'>Для истинных любителей шоколада!</div>
-                        </div>                   
+                        </div>
+                        <div class="slide" id="22" data-cat="2">
+                            <img src="img/products/01.png">
+                            <h2>Шоколадное с шоколадным соусом</h2>
+                            <div class='product-desc'>Для истинных любителей шоколада!</div>
+                        </div>
+                        <div class="slide" id="31" data-cat="3">
+                            <img src="img/products/01.png">
+                            <h2>Шоколадное с шоколадным соусом</h2>
+                            <div class='product-desc'>Для истинных любителей шоколада!</div>
+                        </div>
+                        <div class="slide" id="32" data-cat="3">
+                            <img src="img/products/01.png">
+                            <h2>Шоколадное с шоколадным соусом</h2>
+                            <div class='product-desc'>Для истинных любителей шоколада!</div>
+                        </div>                
                     </div>
                 </section>
             </main>
@@ -182,35 +176,53 @@
         <script src="js/main.js"></script>
         <script src="js/vendor/fotorama.js"></script>
         <script>
+        $(function(){
+            function fotoramaInit(){
                 var $fotoramaDiv = $('.fotorama').fotorama({
                     width: '100%',
                     height: '511',
                     nav: false,
                     arrows: 'always',
                     hash: true
-                });              
-
-                $(document).on('click', '.rec-filter-li > a', function(e){
-                    e.preventDefault();
-                    var $cat = $(this).parent().data('cat');
-                    $('.rec-filter-li').removeClass('active');
-                    $(this).parent().addClass('active');
-                    $('.fotorama').removeClass('hidden');
-                    $('.fotorama').not('[data-cat="' + $cat + '"]').addClass('hidden');
                 });
 
-                var hashOne = window.location.hash.slice(1,2);
-                console.log(hashOne);
-                $('.fotorama').each( function(){
-                    console.log($(this).data('cat'));
-                    if($(this).data('cat') == hashOne) {
-                        console.log(hashOne);
-                        console.log( $(this).data('cat') );
-                        $('.fotorama').addClass('hidden');
-                        $(this).removeClass('hidden');
-                        return false;
-                    }
+                return $fotoramaDiv.data('fotorama');
+            }
+            function showFilter(){
+                var $activeCat = $('.fotorama__active .slide').data("cat");
+                var $regFilter = $('.rec-filter-li');
+
+                $regFilter.removeClass('active');
+                $regFilter.filter("[data-cat='" + $activeCat + "']").addClass('active');
+            } 
+
+            var $recFilter = $('.rec-filter-li');
+            var $group = $('.fotorama .slide');
+            var $groupArr = {};
+
+            (function searchSlides() {
+                $group.each( function(){
+                    if(!$groupArr[$(this).data('cat')] || ($groupArr[$(this).data('cat')] === 0) ) {
+                        $groupArr[$(this).data('cat')] = '' + $(this).index();
+                    }                    
                 });
+            })();
+
+            var $fotoramaApi = fotoramaInit();
+
+            $('.fotorama').on(
+                'fotorama:show fotorama:showend',
+                function (e, fotorama) {
+                    showFilter();
+                }
+            );
+
+            $(document).on('click', '.rec-filter-li', function(){
+                var $cat = $(this).data('cat');
+                $fotoramaApi.show(+$groupArr[$cat]);
+                showFilter();
+            });
+        });     
         </script>
     </body>
 </html>
