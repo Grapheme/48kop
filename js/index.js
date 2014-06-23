@@ -63,7 +63,7 @@ var FamilyForm = (function(){
 		}
 		$('.form-error[data-block=inters]').removeClass('showed');
 		var text = $('.inters-select option[value=' + $(this).val() + ']').text();
-		$('.inters').prepend('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
+		$('.inters-cont').append('<div class="inters-clicked" data-value="' + $(this).val() + '">' + text + '<span class="int-cross">&#10005;</span></div>');
 		$(this).find('option[value=' + $(this).val() + ']').remove();
 		selectBox.destroy();
 		selectBox.init();
