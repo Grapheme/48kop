@@ -533,7 +533,7 @@ a:focus {
 		height: 40rem / @htmlFontSize;
 		line-height: 40rem / @htmlFontSize;
 
-		.day:last-child {
+		.click-allow {
 			color: #f42c61;
 			cursor: pointer;
 		}
@@ -608,5 +608,22 @@ a:focus {
 			color: #126cb6;
 			background: #fff;
 		}
+	}
+}
+
+.repeat-btn {
+	.transition;
+	display: inline-block;
+	border-radius: 2rem;
+	height: 48rem / @htmlFontSize;
+	line-height: 48rem / @htmlFontSize;
+	background: #2056a0;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 1.5rem;
+
+	&:hover {
+		color: #2056a0;
+		background: #fff;
 	}
 }
