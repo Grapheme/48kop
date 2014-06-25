@@ -23,11 +23,12 @@
 	border-radius: 12rem / @htmlFontSize;
 
 	h3 {
-		margin: 0;			
-		padding: 3.8rem 0 0;
 		color: #0d81c4;
-		text-align: center;
-		font-size: 40em / @htmlFontSize;
+	    font-size: 2.5em;
+	    line-height: 1;
+	    margin: 0 0 1.75rem;
+	    padding: 3.8rem 0 0;
+	    text-align: center;
 	}
 
 	.popup-desc {
@@ -187,6 +188,17 @@
 				border-color: transparent;
 			}
 		}
+
+		.img-link {
+			text-decoration: none;
+			border: none;
+
+			img {
+				.transition;
+				height: 3.1rem;
+    			margin: 0 1rem;
+			}
+		}
 	}
 
 	.column {
@@ -194,6 +206,10 @@
 		width: 27rem;
 		margin: 27rem / @htmlFontSize 0 0;
 		vertical-align: top;
+
+		.rec-desc-cont {
+			min-height: 18.35rem;
+		}
 
 		&.left {
 			margin: 27rem / @htmlFontSize 31rem / @htmlFontSize 0 0;
