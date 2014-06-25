@@ -877,14 +877,14 @@ a:focus {
   border-radius: 2rem;
   height: 3rem;
   line-height: 3rem;
-  background: #2056a0;
-  color: #fff;
+  color: #2056a0;
+  background: #fff;
   text-decoration: none;
   padding: 0 1.5rem;
 }
 .repeat-btn:hover {
-  color: #2056a0;
-  background: #fff;
+  background: #2056a0;
+  color: #fff;
 }
 .footer {
   -webkit-box-sizing: border-box;
