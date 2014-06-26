@@ -66,8 +66,8 @@ var App = (function(){
 		var $wrapper = $('.outer-wrapper');
 
 		if( popup.height() > $(window).height() + 60 ){
-			$overlay.addClass('not-fixed').height(popup.height() + 60);
-			$wrapper.height(popup.height() + 60).scrollTop(0).css({ 'overflow': 'hidden'});
+			$overlay.addClass('not-fixed').height(popup.height() + 134);
+			$wrapper.height(popup.height() + 134).scrollTop(0).css({ 'overflow': 'hidden'});
 			popup.css({ 'top': '30px'});
 		}
 		else {
@@ -146,7 +146,7 @@ var App = (function(){
 	});
 	$(document).on('click', '.popup-close, .overlay', function(e){
 		e.preventDefault();
-		$('.overlay').addClass('hidden').removeClass('not-fixed');
+		$('.overlay').addClass('hidden').removeClass('not-fixed').removeAttr('style');
 		$('.popup').addClass('hidden').removeAttr('style');
 		$('.outer-wrapper').removeAttr('style');
 		setTimeout(function(){$(document).scrollTop($winOffset);}, 100);
